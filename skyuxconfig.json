@@ -32,22 +32,21 @@
     ],
     "theming": {
       "supportedThemes": [
-        "default",
         "modern"
       ],
-      "theme": "default"
+      "theme": "modern"
     }
   },
   "host": {
     "url": "https://developer.blackbaud.com",
     "frameOptions": {
-      "none": true
+      "blackbaud": true
     }
   },
   "omnibar": {},
   "params": {
     "svcid": {
-      "value": "skyux"
+      "value": "skyux-modern"
     }
   }
 }

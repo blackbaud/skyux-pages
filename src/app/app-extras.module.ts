@@ -11,8 +11,13 @@ import {
   SkyAppLinkModule
 } from '@skyux/router';
 
+import {
+  SkyActionHubModule
+} from './public/public_api';
+
 @NgModule({
   exports: [
+    SkyActionHubModule,
     SkyAppLinkModule,
     SkyDocsToolsModule
   ],

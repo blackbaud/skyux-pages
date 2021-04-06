@@ -1,0 +1,34 @@
+<sky-wait
+  [isFullPage]="true"
+  [isWaiting]="loading"
+></sky-wait>
+<sky-fluid-grid *ngIf="!loading">
+  <sky-row>
+    <sky-column>
+      <h1 class="sky-font-heading-1">{{ title }}</h1>
+    </sky-column>
+  </sky-row>
+  <sky-row>
+    <sky-column screenXSmall="12" screenLarge="9">
+      <div class="sky-margin-stacked-lg">
+        <ng-content select="sky-action-hub-buttons"></ng-content>
+      </div>
+
+      <div class="sky-margin-stacked-xxl">
+        <sky-needs-attention [items]="needsAttention"></sky-needs-attention>
+      </div>
+
+      <ng-content select="sky-action-hub-content"></ng-content>
+    </sky-column>
+    <sky-column screenXSmall="12" screenLarge="3">
+      <sky-link-list
+        title="Related Links"
+        [links]="relatedLinks"
+      ></sky-link-list>
+      <sky-link-list
+        title="Recently Accessed"
+        [links]="recentLinks"
+      ></sky-link-list>
+    </sky-column>
+  </sky-row>
+</sky-fluid-grid>

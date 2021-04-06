@@ -1,0 +1,23 @@
+@import "~@skyux/theme/scss/variables";
+@import "~@skyux/theme/scss/mixins";
+
+.needs-attention-item {
+  display: block;
+  position: relative;
+
+  &-details,
+  &-icon {
+    color: $sky-theme-modern-font-deemphasized-color;
+  }
+
+  &-icon {
+    position: absolute;
+    right: 0;
+  }
+}
+
+sky-column:last-child {
+  > a {
+    border-bottom: none;
+  }
+}
