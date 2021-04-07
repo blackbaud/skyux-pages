@@ -4,17 +4,19 @@
   [relatedLinks]="relatedLinks"
   [recentLinks]="recentLinks"
 >
-  <sky-action-hub-buttons *ngIf="buttons">
+  <div *ngIf="buttons"
+    class="sky-action-hub-buttons"
+  >
     <a *ngFor="let button of buttons"
        [href]="button.permalink"
        class="sky-btn sky-btn-default sky-margin-inline-sm"
     >
       {{ button.label }}
     </a>
-  </sky-action-hub-buttons>
+  </div>
 
-  <sky-action-hub-content>
+  <div class="sky-action-hub-content">
     <h2 class="sky-font-heading-2">Additional Content</h2>
     <p>Additional content can go here as needed for the functional area</p>
-  </sky-action-hub-content>
+  </div>
 </sky-action-hub>
