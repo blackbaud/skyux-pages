@@ -8,7 +8,6 @@ import {
 
 export interface Configuration {
   title: string;
-  buttons?: SkyLink[];
   relatedLinks?: SkyLink[];
   recentLinks?: SkyLink[];
   needsAttention?: NeedsAttention[];

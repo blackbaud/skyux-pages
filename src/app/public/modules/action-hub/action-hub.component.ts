@@ -43,9 +43,6 @@ export class SkyActionHubContentComponent {}
 })
 export class SkyActionHubComponent implements OnDestroy {
   @Input()
-  public buttons: SkyLink[];
-
-  @Input()
   public set config(value: Configuration | Observable<Configuration>) {
     if (value instanceof Observable) {
       value
