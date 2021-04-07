@@ -7,6 +7,8 @@ import {
 } from '@angular/common';
 
 import {
+  SkyActionHubButtonsComponent,
+  SkyActionHubContentComponent,
   SkyActionHubComponent
 } from './action-hub.component';
 
@@ -52,11 +54,15 @@ import {
     SkyWaitModule
   ],
   declarations: [
+    SkyActionHubButtonsComponent,
+    SkyActionHubContentComponent,
     SkyActionHubComponent,
     SkyNeedsAttentionComponent,
     SkyLinkListComponent
   ],
   exports: [
+    SkyActionHubButtonsComponent,
+    SkyActionHubContentComponent,
     SkyActionHubComponent
   ]
 })
