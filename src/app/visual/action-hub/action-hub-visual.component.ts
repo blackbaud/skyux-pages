@@ -2,6 +2,11 @@ import {
   Component
 } from '@angular/core';
 
+import {
+  SkyThemeService,
+  SkyThemeSettings
+} from '@skyux/theme';
+
 @Component({
   selector: 'app-action-hub-visual',
   templateUrl: './action-hub-visual.component.html'
@@ -148,4 +153,10 @@ export class ActionHubVisualComponent {
       }
     }
   ];
+
+  constructor(private themeSvc: SkyThemeService) { }
+
+  public themeSettingsChange(themeSettings: SkyThemeSettings): void {
+    this.themeSvc.setTheme(themeSettings);
+  }
 }
