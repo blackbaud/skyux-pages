@@ -1,10 +1,7 @@
 import {
+  ComponentFixture,
   TestBed
 } from '@angular/core/testing';
-
-import {
-  SkyAppTestModule
-} from '@skyux-sdk/builder/runtime/testing/browser';
 
 import {
   expect
@@ -13,17 +10,26 @@ import {
 import {
   SkyNeedsAttentionComponent
 } from './needs-attention.component';
+import {SkyActionHubModule} from '../action-hub/action-hub.module';
+import {ActionHubTestComponent} from '../action-hub/fixtures/action-hub.component.fixture';
 
 describe('Needs attention component', () => {
+  let fixture: ComponentFixture<SkyNeedsAttentionComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SkyAppTestModule]
-    });
+      imports: [
+        SkyActionHubModule
+      ],
+      declarations: [
+        ActionHubTestComponent
+      ]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(SkyNeedsAttentionComponent);
   });
 
   it('should use single column for one item', async () => {
-    const fixture = TestBed.createComponent(SkyNeedsAttentionComponent);
     fixture.componentInstance.items = [
       {
         title: 'Item 1',
@@ -39,7 +45,6 @@ describe('Needs attention component', () => {
   });
 
   it('should use two columns for more than six items', async () => {
-    const fixture = TestBed.createComponent(SkyNeedsAttentionComponent);
     fixture.componentInstance.items = Array.from(Array(7).keys()).map((i) => {
       return {
         title: `Item ${i + 1}`,

@@ -3,8 +3,8 @@ import {
 } from '@angular/core/testing';
 
 import {
-  SkyAppTestModule
-} from '@skyux-sdk/builder/runtime/testing/browser';
+  of
+} from 'rxjs';
 
 import {
   expect
@@ -15,51 +15,24 @@ import {
 } from './action-hub.component';
 
 import {
-  Component,
-  Input
-} from '@angular/core';
-
-import {
-  Observable, of
-} from 'rxjs';
-
-import {
-  Configuration
-} from './types/configuration';
-
-import {
   SkyActionHubModule
 } from './action-hub.module';
 
-// Test component
-
-@Component({
-  selector: 'skyux-action-hub-test',
-  template: `
-    <sky-action-hub
-      [config]="configAsync"
-    ></sky-action-hub>
-  `
-})
-class ActionHubTestComponent {
-  @Input()
-  public configAsync: Observable<Configuration>;
-}
-
-// end Test component
+import {
+  ActionHubTestComponent
+} from './fixtures/action-hub.component.fixture';
 
 describe('Action hub component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        SkyAppTestModule,
         SkyActionHubModule
       ],
       declarations: [
         ActionHubTestComponent
       ]
-    });
+    }).compileComponents();
   });
 
   it('should show the title', () => {
@@ -74,7 +47,7 @@ describe('Action hub component', () => {
     expect(h1).toHaveText('Test Hub');
   });
 
-  it('should show related links', () => {
+  it('should show related links', async () => {
     const fixture = TestBed.createComponent(SkyActionHubComponent);
     fixture.componentInstance.title = 'Test Hub';
     fixture.componentInstance.relatedLinks = [
@@ -89,7 +62,8 @@ describe('Action hub component', () => {
     fixture.componentInstance.needsAttention = [];
 
     fixture.detectChanges();
-    const link1 = fixture.nativeElement.querySelector('sky-link-list[title="Related Links"] a');
+    await fixture.whenStable();
+    const link1 = fixture.nativeElement.querySelector('sky-link-list[ng-reflect-title="Related Links"] a');
     expect(link1).toHaveText('Test Link');
   });
 
@@ -125,9 +99,9 @@ describe('Action hub component', () => {
     fixture.detectChanges();
     const h1 = fixture.nativeElement.querySelector('h1');
     expect(h1).toHaveText('Test Hub');
-    const link1 = fixture.nativeElement.querySelector('sky-link-list[title="Related Links"] a');
+    const link1 = fixture.nativeElement.querySelector('sky-link-list[ng-reflect-title="Related Links"] a');
     expect(link1).toHaveText('Test Link');
-    const recent1 = fixture.nativeElement.querySelector('sky-link-list[title="Recently Accessed"] a');
+    const recent1 = fixture.nativeElement.querySelector('sky-link-list[ng-reflect-title="Recently Accessed"] a');
     expect(recent1).toHaveText('Recent Link');
   });
 

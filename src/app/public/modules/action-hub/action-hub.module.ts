@@ -7,12 +7,6 @@ import {
 } from '@angular/common';
 
 import {
-  SkyActionHubButtonsComponent,
-  SkyActionHubContentComponent,
-  SkyActionHubComponent
-} from './action-hub.component';
-
-import {
   SkyActionButtonModule,
   SkyFluidGridModule
 } from '@skyux/layout';
@@ -35,6 +29,18 @@ import {
 } from '@skyux/theme';
 
 import {
+  SkyActionHubComponent
+} from './action-hub.component';
+
+import {
+  SkyActionHubButtonsComponent
+} from './action-hub-buttons.component';
+
+import {
+  SkyActionHubContentComponent
+} from './action-hub-content.component';
+
+import {
   SkyLinkListComponent
 } from '../link-list/link-list.component';
 
@@ -55,15 +61,15 @@ import {
   ],
   declarations: [
     SkyActionHubButtonsComponent,
-    SkyActionHubContentComponent,
     SkyActionHubComponent,
+    SkyActionHubContentComponent,
     SkyNeedsAttentionComponent,
     SkyLinkListComponent
   ],
   exports: [
     SkyActionHubButtonsComponent,
-    SkyActionHubContentComponent,
-    SkyActionHubComponent
+    SkyActionHubComponent,
+    SkyActionHubContentComponent
   ]
 })
 export class SkyActionHubModule {}

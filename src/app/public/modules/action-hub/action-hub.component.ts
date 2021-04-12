@@ -26,18 +26,6 @@ import {
 } from './types/configuration';
 
 @Component({
-  selector: 'sky-action-hub-buttons',
-  template: `<ng-content></ng-content>`
-})
-export class SkyActionHubButtonsComponent {}
-
-@Component({
-  selector: 'sky-action-hub-content',
-  template: `<ng-content></ng-content>`
-})
-export class SkyActionHubContentComponent {}
-
-@Component({
   selector: 'sky-action-hub',
   templateUrl: './action-hub.component.html'
 })

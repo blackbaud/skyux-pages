@@ -1,10 +1,7 @@
 import {
+  ComponentFixture,
   TestBed
 } from '@angular/core/testing';
-
-import {
-  SkyAppTestModule
-} from '@skyux-sdk/builder/runtime/testing/browser';
 
 import {
   expect
@@ -14,16 +11,31 @@ import {
   SkyLinkListComponent
 } from './link-list.component';
 
+import {
+  SkyActionHubModule
+} from '../action-hub/action-hub.module';
+
+import {
+  ActionHubTestComponent
+} from '../action-hub/fixtures/action-hub.component.fixture';
+
 describe('Link list component', () => {
+  let fixture: ComponentFixture<SkyLinkListComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SkyAppTestModule]
-    });
+      imports: [
+        SkyActionHubModule
+      ],
+      declarations: [
+        ActionHubTestComponent
+      ]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(SkyLinkListComponent);
   });
 
   it('should show links', async () => {
-    const fixture = TestBed.createComponent(SkyLinkListComponent);
     fixture.componentInstance.title = 'Full List';
     fixture.componentInstance.links = [
       {
@@ -53,7 +65,6 @@ describe('Link list component', () => {
   });
 
   it('should disappear when empty', async () => {
-    const fixture = TestBed.createComponent(SkyLinkListComponent);
     fixture.componentInstance.title = 'Empty List';
     fixture.componentInstance.links = [];
 

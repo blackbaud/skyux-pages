@@ -12,47 +12,65 @@ export class ActionHubVisualComponent {
     {
       title: '1 update',
       message: 'from portal',
-      permalink: {url: '#'}
+      permalink: {
+        url: '#'
+      }
     },
     {
       title: '2 new messages',
       message: 'from online donation',
-      permalink: {url: '#'}
+      permalink: {
+        url: '#'
+      }
     },
     {
       title: '3 possible duplicates',
       message: 'from constituent lists',
-      permalink: {url: '#'}
+      permalink: {
+        url: '#'
+      }
     },
     {
       title: '4 updates',
       message: 'from portal',
-      permalink: {url: '#'}
+      permalink: {
+        url: '#'
+      }
     },
     {
       title: '5 new messages',
       message: 'from online donation',
-      permalink: {url: '#'}
+      permalink: {
+        url: '#'
+      }
     },
     {
       title: '6 possible duplicates',
       message: 'from constituent lists',
-      permalink: {url: '#'}
+      permalink: {
+        url: '#'
+      }
     },
     {
       title: '7 update',
       message: 'from portal',
-      permalink: {url: '#'}
+      permalink: {
+        url: '#'
+      }
     },
     {
       title: '8 new messages',
       message: 'from online donation',
-      permalink: {url: '#'}
+      permalink: {
+        url: '#'
+      }
     },
     {
       title: '9 possible duplicates',
       message: 'from constituent lists',
-      permalink: {url: '#'}
+      permalink: {
+        url: '#'
+      }
     }
   ];
   /* istanbul ignore next */

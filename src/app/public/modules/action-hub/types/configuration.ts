@@ -7,8 +7,8 @@ import {
 } from '../../needs-attention/types/needs-attention';
 
 export interface Configuration {
-  title: string;
-  relatedLinks?: SkyLink[];
-  recentLinks?: SkyLink[];
   needsAttention?: NeedsAttention[];
+  recentLinks?: SkyLink[];
+  relatedLinks?: SkyLink[];
+  title: string;
 }

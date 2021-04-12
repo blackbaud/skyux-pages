@@ -32,6 +32,7 @@
     ],
     "theming": {
       "supportedThemes": [
+        "default",
         "modern"
       ],
       "theme": "modern"
@@ -40,7 +41,7 @@
   "host": {
     "url": "https://developer.blackbaud.com",
     "frameOptions": {
-      "blackbaud": true
+      "none": true
     }
   },
   "omnibar": {},
