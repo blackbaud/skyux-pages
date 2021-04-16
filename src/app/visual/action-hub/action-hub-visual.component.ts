@@ -1,18 +1,11 @@
-import {
-  Component
-} from '@angular/core';
-
-import {
-  SkyThemeService,
-  SkyThemeSettings
-} from '@skyux/theme';
+import { Component } from '@angular/core';
+import { SkyThemeService, SkyThemeSettings } from '@skyux/theme';
 
 @Component({
   selector: 'app-action-hub-visual',
   templateUrl: './action-hub-visual.component.html'
 })
 export class ActionHubVisualComponent {
-  /* istanbul ignore next */
   public needsAttention = [
     {
       title: '1 update',
@@ -78,7 +71,6 @@ export class ActionHubVisualComponent {
       }
     }
   ];
-  /* istanbul ignore next */
   public recentLinks = [
     {
       label: 'Recent 1',
@@ -111,7 +103,6 @@ export class ActionHubVisualComponent {
       }
     }
   ];
-  /* istanbul ignore next */
   public relatedLinks = [
     {
       label: 'Link 1',
@@ -132,7 +123,6 @@ export class ActionHubVisualComponent {
       }
     }
   ];
-  /* istanbul ignore next */
   public buttons = [
     {
       label: 'Action 1',
@@ -154,7 +144,7 @@ export class ActionHubVisualComponent {
     }
   ];
 
-  constructor(private themeSvc: SkyThemeService) { }
+  constructor(private themeSvc: SkyThemeService) {}
 
   public themeSettingsChange(themeSettings: SkyThemeSettings): void {
     this.themeSvc.setTheme(themeSettings);

@@ -1,35 +1,16 @@
-import {
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { expect } from '@skyux-sdk/testing';
 
-import {
-  expect
-} from '@skyux-sdk/testing';
+import { SkyActionHubModule } from '../action-hub/action-hub.module';
 
-import {
-  SkyLinkListComponent
-} from './link-list.component';
-
-import {
-  SkyActionHubModule
-} from '../action-hub/action-hub.module';
-
-import {
-  ActionHubTestComponent
-} from '../action-hub/fixtures/action-hub.component.fixture';
+import { SkyLinkListComponent } from './link-list.component';
 
 describe('Link list component', () => {
   let fixture: ComponentFixture<SkyLinkListComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        SkyActionHubModule
-      ],
-      declarations: [
-        ActionHubTestComponent
-      ]
+      imports: [SkyActionHubModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(SkyLinkListComponent);
@@ -72,5 +53,4 @@ describe('Link list component', () => {
 
     expect(fixture.nativeElement).not.toHaveText('Empty List');
   });
-
 });

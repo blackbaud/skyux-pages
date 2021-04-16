@@ -1,6 +1,4 @@
-import {
-  SkyActionButtonPermalink
-} from '@skyux/layout';
+import { SkyActionButtonPermalink } from '@skyux/layout';
 
 export interface NeedsAttention {
   message?: string;

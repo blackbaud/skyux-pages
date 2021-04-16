@@ -1,11 +1,6 @@
-import {
-  Component,
-  Input
-} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import {
-  SkyLink
-} from './types/link';
+import { SkyLink } from './types/link';
 
 @Component({
   selector: 'sky-link-list',

@@ -1,11 +1,6 @@
-import {
-  Component,
-  Input
-} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import {
-  NeedsAttention
-} from './types/needs-attention';
+import { NeedsAttention } from './types/needs-attention';
 
 @Component({
   selector: 'sky-needs-attention',

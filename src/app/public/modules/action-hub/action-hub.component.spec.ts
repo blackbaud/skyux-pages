@@ -1,37 +1,12 @@
-import {
-  TestBed
-} from '@angular/core/testing';
-
-import {
-  of
-} from 'rxjs';
-
-import {
-  expect
-} from '@skyux-sdk/testing';
-
-import {
-  SkyActionHubComponent
-} from './action-hub.component';
-
-import {
-  SkyActionHubModule
-} from './action-hub.module';
-
-import {
-  ActionHubTestComponent
-} from './fixtures/action-hub.component.fixture';
+import { TestBed } from '@angular/core/testing';
+import { expect } from '@skyux-sdk/testing';
+import { SkyActionHubComponent } from './action-hub.component';
+import { SkyActionHubModule } from './action-hub.module';
 
 describe('Action hub component', () => {
-
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        SkyActionHubModule
-      ],
-      declarations: [
-        ActionHubTestComponent
-      ]
+      imports: [SkyActionHubModule]
     }).compileComponents();
   });
 
@@ -63,7 +38,9 @@ describe('Action hub component', () => {
 
     fixture.detectChanges();
     await fixture.whenStable();
-    const link1 = fixture.nativeElement.querySelector('sky-link-list[ng-reflect-title="Related Links"] a');
+    const link1 = fixture.nativeElement.querySelector(
+      'sky-link-list[ng-reflect-title="Related Links"] a'
+    );
     expect(link1).toHaveText('Test Link');
   });
 
@@ -99,30 +76,13 @@ describe('Action hub component', () => {
     fixture.detectChanges();
     const h1 = fixture.nativeElement.querySelector('h1');
     expect(h1).toHaveText('Test Hub');
-    const link1 = fixture.nativeElement.querySelector('sky-link-list[ng-reflect-title="Related Links"] a');
+    const link1 = fixture.nativeElement.querySelector(
+      'sky-link-list[ng-reflect-title="Related Links"] a'
+    );
     expect(link1).toHaveText('Test Link');
-    const recent1 = fixture.nativeElement.querySelector('sky-link-list[ng-reflect-title="Recently Accessed"] a');
+    const recent1 = fixture.nativeElement.querySelector(
+      'sky-link-list[ng-reflect-title="Recently Accessed"] a'
+    );
     expect(recent1).toHaveText('Recent Link');
-  });
-
-  it('should load asynchronously', async () => {
-    const fixture = TestBed.createComponent(SkyActionHubComponent);
-    fixture.detectChanges();
-
-    const waiting = fixture.nativeElement.querySelectorAll('.sky-wait-mask');
-    expect(waiting.length).toBe(1);
-
-    fixture.componentInstance.config = of({
-      title: 'Test Hub',
-      relatedLinks: [],
-      recentLinks: [],
-      needsAttention: []
-    });
-    fixture.detectChanges();
-    const h1 = fixture.nativeElement.querySelector('h1');
-    expect(h1).toHaveText('Test Hub');
-
-    const waitOver = fixture.nativeElement.querySelectorAll('.sky-wait-mask');
-    expect(waitOver.length).toBe(0);
   });
 });

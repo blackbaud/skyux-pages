@@ -1,23 +1,13 @@
 <ng-container *ngIf="links.length > 0">
-  <h2
-    class="sky-font-heading-4 sky-margin-stacked-xs"
-  >
+  <h2 class="sky-font-heading-4 sky-margin-stacked-xs">
     {{ title }}
   </h2>
-  <ul
-    class="link-list sky-margin-stacked-xl"
-  >
-    <li *ngFor="let link of links"
-      class="sky-margin-stacked-xs"
-    >
-      <a *ngIf="link.permalink.url"
-        [href]="link.permalink.url"
-      >
+  <ul class="link-list sky-margin-stacked-xl">
+    <li *ngFor="let link of links" class="sky-margin-stacked-xs">
+      <a *ngIf="link.permalink.url" [href]="link.permalink.url">
         {{ link.label }}
       </a>
-      <a *ngIf="link.permalink.route"
-         [routerLink]="link.permalink.route"
-      >
+      <a *ngIf="link.permalink.route" [routerLink]="link.permalink.route">
         {{ link.label }}
       </a>
     </li>

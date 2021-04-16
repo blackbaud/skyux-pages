@@ -1,29 +1,11 @@
-import {
-  Component,
-  Input,
-  OnDestroy
-} from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 
-import {
-  Observable,
-  Subject
-} from 'rxjs';
+import { Subject } from 'rxjs';
 
-import {
-  takeUntil
-} from 'rxjs/operators';
+import { SkyLink } from '../link-list/types/link';
+import { NeedsAttention } from '../needs-attention/types/needs-attention';
 
-import {
-  SkyLink
-} from '../link-list/types/link';
-
-import {
-  NeedsAttention
-} from '../needs-attention/types/needs-attention';
-
-import {
-  Configuration
-} from './types/configuration';
+import { Configuration } from './types/configuration';
 
 @Component({
   selector: 'sky-action-hub',
@@ -31,16 +13,20 @@ import {
 })
 export class SkyActionHubComponent implements OnDestroy {
   @Input()
-  public set config(value: Configuration | Observable<Configuration>) {
-    if (value instanceof Observable) {
-      value
-        .pipe(takeUntil(this.ngUnsubscribe))
-        .subscribe(configuration => {
-          this._configuration = configuration;
-        });
-    } else {
-      this._configuration = value;
+  public set config(value: Configuration) {
+    /* istanbul ignore else */
+    if (value.needsAttention) {
+      this.needsAttention = value.needsAttention;
     }
+    /* istanbul ignore else */
+    if (value.recentLinks) {
+      this.recentLinks = value.recentLinks;
+    }
+    /* istanbul ignore else */
+    if (value.relatedLinks) {
+      this.relatedLinks = value.relatedLinks;
+    }
+    this.title = value.title;
   }
 
   @Input()
@@ -65,22 +51,6 @@ export class SkyActionHubComponent implements OnDestroy {
 
   public get title(): string {
     return this._title;
-  }
-
-  private set _configuration(value: Configuration) {
-    /* istanbul ignore else */
-    if (value.needsAttention) {
-      this.needsAttention = value.needsAttention;
-    }
-    /* istanbul ignore else */
-    if (value.recentLinks) {
-      this.recentLinks = value.recentLinks;
-    }
-    /* istanbul ignore else */
-    if (value.relatedLinks) {
-      this.relatedLinks = value.relatedLinks;
-    }
-    this.title = value.title;
   }
 
   private ngUnsubscribe = new Subject();
