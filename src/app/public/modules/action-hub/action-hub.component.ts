@@ -1,10 +1,7 @@
 import { Component, Input, OnDestroy } from '@angular/core';
-
 import { Subject } from 'rxjs';
-
 import { SkyLink } from '../link-list/types/link';
 import { NeedsAttention } from '../needs-attention/types/needs-attention';
-
 import { Configuration } from './types/configuration';
 
 @Component({
@@ -30,11 +27,6 @@ export class SkyActionHubComponent implements OnDestroy {
   }
 
   @Input()
-  public configAuth = false;
-
-  public loading = true;
-
-  @Input()
   public needsAttention: NeedsAttention[];
 
   @Input()
@@ -44,18 +36,13 @@ export class SkyActionHubComponent implements OnDestroy {
   public relatedLinks: SkyLink[];
 
   @Input()
-  public set title(value: string) {
-    this._title = value;
-    this.loading = !value;
-  }
+  public title = '';
 
-  public get title(): string {
-    return this._title;
+  public get loading(): boolean {
+    return !this.title;
   }
 
   private ngUnsubscribe = new Subject();
-
-  private _title: string = '';
 
   public ngOnDestroy(): void {
     this.ngUnsubscribe.next();

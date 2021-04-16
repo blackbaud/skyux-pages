@@ -9,8 +9,8 @@ import { SkyLink } from './types/link';
 })
 export class SkyLinkListComponent {
   @Input()
-  public title: string;
+  public links: SkyLink[];
 
   @Input()
-  public links: SkyLink[];
+  public title: string;
 }
