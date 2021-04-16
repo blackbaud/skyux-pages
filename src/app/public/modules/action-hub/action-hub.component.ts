@@ -1,7 +1,10 @@
 import { Component, Input, OnDestroy } from '@angular/core';
+
 import { Subject } from 'rxjs';
+
 import { SkyLink } from '../link-list/types/link';
 import { NeedsAttention } from '../needs-attention/types/needs-attention';
+
 import { Configuration } from './types/configuration';
 
 @Component({

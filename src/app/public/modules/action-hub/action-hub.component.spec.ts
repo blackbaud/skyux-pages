@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { expect } from '@skyux-sdk/testing';
+
 import { SkyActionHubComponent } from './action-hub.component';
 import { SkyActionHubModule } from './action-hub.module';
 
