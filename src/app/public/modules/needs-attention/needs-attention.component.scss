@@ -2,17 +2,21 @@
 @import "~@skyux/theme/scss/mixins";
 
 .needs-attention-item {
-  display: block;
-  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 
   &-details,
   &-icon {
     color: $sky-theme-modern-font-deemphasized-color;
   }
 
+  &-key-info {
+    flex-grow: 1;
+  }
+
   &-icon {
-    position: absolute;
-    right: 0;
+    order: 1;
   }
 }
 
