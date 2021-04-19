@@ -1,4 +1,4 @@
-<div class="sky-elevation-1-bordered sky-padding-even-xl">
+<div class="sky-box sky-elevation-1-bordered sky-padding-even-xl">
   <h2 class="sky-font-heading-4">{{ 'Needs Attention' | skyLibResources }}</h2>
   <sky-fluid-grid [gutterSize]="0">
     <sky-row>
@@ -9,15 +9,20 @@
       >
         <ng-template #link>
           <sky-icon
+            *skyThemeIf="'default'"
             class="needs-attention-item-icon"
             icon="chevron-right"
           ></sky-icon>
-          <span class="needs-attention-item-label sky-padding-horizontal-sm">{{
-            item.title
-          }}</span>
-          <span class="needs-attention-item-details sky-font-body-sm">{{
-            item.message
-          }}</span>
+          <sky-icon
+            *skyThemeIf="'modern'"
+            class="needs-attention-item-icon"
+            icon="chevron-right"
+            iconType="skyux"
+          ></sky-icon>
+          <sky-key-info layout="horizontal">
+            <sky-key-info-label>{{ item.title }}</sky-key-info-label>
+            <sky-key-info-value>{{ item.message }}</sky-key-info-value>
+          </sky-key-info>
         </ng-template>
         <a
           *ngIf="item.permalink.route"

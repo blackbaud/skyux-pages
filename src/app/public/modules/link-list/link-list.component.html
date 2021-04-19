@@ -1,8 +1,10 @@
 <ng-container *ngIf="links.length > 0">
+  <!-- @TODO: switch to sky-margin-stacked-sm -->
   <h2 class="sky-font-heading-4 sky-margin-stacked-xs">
     {{ title }}
   </h2>
   <ul class="link-list sky-margin-stacked-xl">
+    <!-- @TODO: switch to sky-margin-stacked-sm -->
     <li *ngFor="let link of links" class="sky-margin-stacked-xs">
       <a *ngIf="link.permalink.url" [href]="link.permalink.url">
         {{ link.label }}
