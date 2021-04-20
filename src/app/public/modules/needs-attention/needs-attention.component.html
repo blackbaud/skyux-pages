@@ -1,6 +1,6 @@
 <div class="sky-box sky-elevation-1-bordered sky-padding-even-xl">
   <h2 class="sky-font-heading-4">{{ 'Needs Attention' | skyLibResources }}</h2>
-  <sky-fluid-grid 
+  <sky-fluid-grid
     [gutterSize]="Large"
     [disableMargin]="true"
   >
@@ -25,14 +25,10 @@
           <sky-key-info layout="horizontal" class="needs-attention-item-key-info sky-margin-inline-sm">
             <sky-key-info-label>{{ item.message }}</sky-key-info-label>
             <sky-key-info-value
-              *skyThemeIf="'default'"
-              class="sky-emphasized"
-            >
-              {{ item.title }}
-            </sky-key-info-value>
-            <sky-key-info-value
-              *skyThemeIf="'modern'"
-              class="sky-font-display-4"
+              [skyThemeClass]="{
+                'sky-emphasized': 'default',
+                'sky-font-display-4': 'modern'
+              }"
             >
               {{ item.title }}
             </sky-key-info-value>
