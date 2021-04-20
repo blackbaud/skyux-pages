@@ -1,9 +1,6 @@
 <div class="sky-box sky-elevation-1-bordered sky-padding-even-xl">
   <h2 class="sky-font-heading-4">{{ 'Needs Attention' | skyLibResources }}</h2>
-  <sky-fluid-grid
-    [gutterSize]="Large"
-    [disableMargin]="true"
-  >
+  <sky-fluid-grid [gutterSize]="gutterSize" [disableMargin]="true">
     <sky-row>
       <sky-column
         *ngFor="let item of items; let isLast = last"
@@ -22,7 +19,10 @@
             icon="chevron-right"
             iconType="skyux"
           ></sky-icon>
-          <sky-key-info layout="horizontal" class="needs-attention-item-key-info sky-margin-inline-sm">
+          <sky-key-info
+            layout="horizontal"
+            class="needs-attention-item-key-info sky-margin-inline-sm"
+          >
             <sky-key-info-label>{{ item.message }}</sky-key-info-label>
             <sky-key-info-value
               [skyThemeClass]="{

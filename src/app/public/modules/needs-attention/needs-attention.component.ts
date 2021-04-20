@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SkyFluidGridGutterSize } from '@skyux/layout';
 
 import { NeedsAttention } from './types/needs-attention';
 
@@ -10,4 +11,6 @@ import { NeedsAttention } from './types/needs-attention';
 export class SkyNeedsAttentionComponent {
   @Input()
   public items: NeedsAttention[];
+
+  public readonly gutterSize = SkyFluidGridGutterSize.Large;
 }
