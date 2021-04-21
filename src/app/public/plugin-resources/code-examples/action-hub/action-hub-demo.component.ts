@@ -1,156 +1,154 @@
-import { Component } from "@angular/core";
-import { Configuration } from "../../../modules/action-hub/types/configuration";
+import { Component } from '@angular/core';
+
+import { Configuration } from '../../../modules/action-hub/types/configuration';
 
 @Component({
-  selector: "app-action-hub-visual",
-  templateUrl: "./action-hub-demo.component.html",
+  selector: 'app-action-hub-visual',
+  templateUrl: './action-hub-demo.component.html'
 })
 export class ActionHubDemoComponent {
   public needsAttention = [
     {
-      title: "1 update",
-      message: "from portal",
+      title: '9 updates',
+      message: 'from portal',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      title: "2 new messages",
-      message: "from online donation",
+      title: '8 new messages',
+      message: 'from online donation',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      title: "3 possible duplicates",
-      message: "from constituent lists",
+      title: '7 possible duplicates',
+      message: 'from constituent lists',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      title: "4 updates",
-      message: "from portal",
+      title: '6 updates',
+      message: 'from portal',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      title: "5 new messages",
-      message: "from online donation",
+      title: '5 new messages',
+      message: 'from online donation',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      title: "6 possible duplicates",
-      message: "from constituent lists",
+      title: '4 possible duplicates',
+      message: 'from constituent lists',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      title: "7 update",
-      message: "from portal",
+      title: '3 update',
+      message: 'from portal',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      title: "8 new messages",
-      message: "from online donation",
+      title: '2 new messages',
+      message: 'from online donation',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      title: "9 possible duplicates",
-      message: "from constituent lists",
+      title: '1 possible duplicate',
+      message: 'from constituent lists',
       permalink: {
-        url: "#",
-      },
-    },
+        url: '#'
+      }
+    }
   ];
-
   public recentLinks = [
     {
-      label: "Recent 1",
+      label: 'Recent 1',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      label: "Recent 2",
+      label: 'Recent 2',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      label: "Recent 3",
+      label: 'Recent 3',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      label: "Recent 4",
+      label: 'Recent 4',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      label: "Recent 5",
+      label: 'Recent 5',
       permalink: {
-        url: "#",
-      },
-    },
+        url: '#'
+      }
+    }
   ];
-
   public relatedLinks = [
     {
-      label: "Link 1",
+      label: 'Link 1',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      label: "Link 2",
+      label: 'Link 2',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      label: "Link 3",
+      label: 'Link 3',
       permalink: {
-        url: "#",
-      },
-    },
+        url: '#'
+      }
+    }
   ];
-
   public buttons = [
     {
-      label: "Action 1",
+      label: 'Action 1',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      label: "Action 2",
+      label: 'Action 2',
       permalink: {
-        url: "#",
-      },
+        url: '#'
+      }
     },
     {
-      label: "Action 3",
+      label: 'Action 3',
       permalink: {
-        url: "#",
-      },
-    },
+        url: '#'
+      }
+    }
   ];
 
   public configuration: Configuration = {
-    title: "Action Hub",
+    title: 'Action Hub',
     needsAttention: this.needsAttention,
     recentLinks: this.recentLinks,
-    relatedLinks: this.relatedLinks,
+    relatedLinks: this.relatedLinks
   };
 }

@@ -1,6 +1,7 @@
 <sky-action-hub [config]="configuration">
   <sky-action-hub-buttons>
-    <a *ngFor="let button of buttons"
+    <a
+      *ngFor="let button of buttons"
       class="sky-btn sky-btn-default sky-margin-inline-sm"
       [href]="button.permalink.url"
     >
