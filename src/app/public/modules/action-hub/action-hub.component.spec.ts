@@ -4,7 +4,7 @@ import { expect } from '@skyux-sdk/testing';
 import { SkyActionHubComponent } from './action-hub.component';
 import { SkyActionHubModule } from './action-hub.module';
 
-describe('Action hub component', () => {
+describe('Action hub component', async () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [SkyActionHubModule]
@@ -87,9 +87,10 @@ describe('Action hub component', () => {
     expect(recent1).toHaveText('Recent Link');
   });
 
-  it('should show loading screen', () => {
+  it('should show loading screen', async () => {
     const fixture = TestBed.createComponent(SkyActionHubComponent);
     fixture.detectChanges();
+    await fixture.whenStable();
     const wait = fixture.nativeElement.querySelector('sky-wait [aria-label]');
     expect(wait.ariaLabel).toBe('Page loading. Please wait.');
   });

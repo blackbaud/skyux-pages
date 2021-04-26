@@ -1,6 +1,4 @@
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   Input
 } from '@angular/core';
@@ -12,12 +10,11 @@ import { Configuration } from './types/configuration';
 
 @Component({
   selector: 'sky-action-hub',
-  templateUrl: './action-hub.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: './action-hub.component.html'
 })
 export class SkyActionHubComponent {
   @Input()
-  public set config(value: Configuration) {
+  public set config(value: Configuration | any) {
     /* istanbul ignore else */
     if (value.needsAttention) {
       this.needsAttention = value.needsAttention;
@@ -30,8 +27,10 @@ export class SkyActionHubComponent {
     if (value.relatedLinks) {
       this.relatedLinks = value.relatedLinks;
     }
-    this.title = value.title;
-    this.changeDetector.markForCheck();
+    /* istanbul ignore else */
+    if (value.title) {
+      this.title = value.title;
+    }
   }
 
   @Input()
@@ -45,8 +44,6 @@ export class SkyActionHubComponent {
 
   @Input()
   public title = '';
-
-  constructor(private changeDetector: ChangeDetectorRef) {}
 
   public get loading(): boolean {
     return !this.title;
