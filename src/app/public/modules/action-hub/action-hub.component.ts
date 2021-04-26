@@ -15,18 +15,9 @@ import { Configuration } from './types/configuration';
 export class SkyActionHubComponent {
   @Input()
   public set config(value: Configuration | any) {
-    /* istanbul ignore else */
-    if (value.needsAttention) {
-      this.needsAttention = value.needsAttention;
-    }
-    /* istanbul ignore else */
-    if (value.recentLinks) {
-      this.recentLinks = value.recentLinks;
-    }
-    /* istanbul ignore else */
-    if (value.relatedLinks) {
-      this.relatedLinks = value.relatedLinks;
-    }
+    this.needsAttention = value.needsAttention || [];
+    this.recentLinks = value.recentLinks || [];
+    this.relatedLinks = value.relatedLinks || [];
     /* istanbul ignore else */
     if (value.title) {
       this.title = value.title;
