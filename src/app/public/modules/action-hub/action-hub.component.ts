@@ -1,7 +1,4 @@
-import {
-  Component,
-  Input
-} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { SkyLink } from '../link-list/types/link';
 import { NeedsAttention } from '../needs-attention/types/needs-attention';
