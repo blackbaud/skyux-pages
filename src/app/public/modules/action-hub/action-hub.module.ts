@@ -20,14 +20,14 @@ import { SkyActionHubComponent } from './action-hub.component';
 @NgModule({
   imports: [
     CommonModule,
-    SkyFluidGridModule,
-    SkyActionButtonModule,
     RouterModule,
-    SkyThemeModule,
+    SkyActionButtonModule,
+    SkyFluidGridModule,
     SkyI18nModule,
     SkyIconModule,
-    SkyWaitModule,
-    SkyKeyInfoModule
+    SkyKeyInfoModule,
+    SkyThemeModule,
+    SkyWaitModule
   ],
   declarations: [
     SkyActionHubButtonsComponent,

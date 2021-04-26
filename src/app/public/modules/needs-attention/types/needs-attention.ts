@@ -1,7 +1,7 @@
 import { SkyActionButtonPermalink } from '@skyux/layout';
 
-export interface NeedsAttention {
+export type NeedsAttention = {
   message?: string;
   permalink?: SkyActionButtonPermalink;
   title?: string;
-}
+};

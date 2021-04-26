@@ -1,6 +1,9 @@
-import { Component, Input, OnDestroy } from '@angular/core';
-
-import { Subject } from 'rxjs';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input
+} from '@angular/core';
 
 import { SkyLink } from '../link-list/types/link';
 import { NeedsAttention } from '../needs-attention/types/needs-attention';
@@ -9,9 +12,10 @@ import { Configuration } from './types/configuration';
 
 @Component({
   selector: 'sky-action-hub',
-  templateUrl: './action-hub.component.html'
+  templateUrl: './action-hub.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SkyActionHubComponent implements OnDestroy {
+export class SkyActionHubComponent {
   @Input()
   public set config(value: Configuration) {
     /* istanbul ignore else */
@@ -27,6 +31,7 @@ export class SkyActionHubComponent implements OnDestroy {
       this.relatedLinks = value.relatedLinks;
     }
     this.title = value.title;
+    this.changeDetector.markForCheck();
   }
 
   @Input()
@@ -41,14 +46,9 @@ export class SkyActionHubComponent implements OnDestroy {
   @Input()
   public title = '';
 
+  constructor(private changeDetector: ChangeDetectorRef) {}
+
   public get loading(): boolean {
     return !this.title;
-  }
-
-  private ngUnsubscribe = new Subject();
-
-  public ngOnDestroy(): void {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
   }
 }

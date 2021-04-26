@@ -1,6 +1,6 @@
 import { SkyActionButtonPermalink } from '@skyux/layout';
 
-export interface SkyLink {
+export type SkyLink = {
   label: string;
   permalink?: SkyActionButtonPermalink;
-}
+};
