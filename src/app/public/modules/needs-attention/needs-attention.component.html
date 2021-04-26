@@ -1,4 +1,10 @@
-<div class="sky-box sky-elevation-1-bordered sky-padding-even-xl">
+<div 
+  class="needs-attention-container"
+  [skyThemeClass]="{
+    'sky-padding-even-large sky-shadow': 'default',
+    'sky-box sky-elevation-1-bordered sky-padding-even-xl': 'modern'
+    }"
+  >
   <h2 class="sky-font-heading-4">{{ 'Needs Attention' | skyLibResources }}</h2>
   <sky-fluid-grid [gutterSize]="gutterSize" [disableMargin]="true">
     <sky-row>

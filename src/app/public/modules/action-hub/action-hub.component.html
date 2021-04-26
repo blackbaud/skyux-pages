@@ -7,11 +7,21 @@
   </sky-row>
   <sky-row>
     <sky-column screenLarge="9" screenXSmall="12">
-      <div class="sky-margin-stacked-lg">
+      <div
+        [skyThemeClass]="{
+          'sky-margin-stacked-separate': 'default',
+          'sky-margin-stacked-xl': 'modern'
+          }"
+      >
         <ng-content select="sky-action-hub-buttons"></ng-content>
       </div>
 
-      <div class="sky-margin-stacked-xxl">
+      <div 
+        [skyThemeClass]="{
+          'sky-margin-stacked-separate': 'default',
+          'sky-margin-stacked-xxl': 'modern'
+          }"
+      >
         <sky-needs-attention [items]="needsAttention"></sky-needs-attention>
       </div>
 
