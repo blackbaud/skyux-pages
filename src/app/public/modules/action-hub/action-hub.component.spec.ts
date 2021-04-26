@@ -87,14 +87,6 @@ describe('Action hub component', async () => {
     expect(recent1).toHaveText('Recent Link');
   });
 
-  it('should show loading screen', async () => {
-    const fixture = TestBed.createComponent(SkyActionHubComponent);
-    fixture.detectChanges();
-    await fixture.whenStable();
-    const wait = fixture.nativeElement.querySelector('sky-wait [aria-label]');
-    expect(wait.ariaLabel).toBe('Page loading. Please wait.');
-  });
-
   it('should work with an empty config object', () => {
     const fixture = TestBed.createComponent(SkyActionHubComponent);
     fixture.componentInstance.config = {
