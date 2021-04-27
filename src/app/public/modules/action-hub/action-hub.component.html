@@ -25,7 +25,14 @@
         <sky-needs-attention [items]="needsAttention"></sky-needs-attention>
       </div>
 
-      <ng-content select="sky-action-hub-content"></ng-content>
+      <div
+        [skyThemeClass]="{
+          'sky-margin-stacked-separate': 'default',
+          'sky-margin-stacked-xxl': 'modern'
+        }"
+      >
+        <ng-content select="sky-action-hub-content"></ng-content>
+      </div>
     </sky-column>
     <sky-column screenLarge="3" screenXSmall="12">
       <sky-link-list
