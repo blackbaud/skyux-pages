@@ -1,7 +1,7 @@
 import { NavigationExtras } from '@angular/router';
 
-export type SkyLink = {
-  label: string;
+export type SkyActionHubNeedsAttention = {
+  message?: string;
   permalink?: {
     route?: {
       commands: any[];
@@ -9,4 +9,5 @@ export type SkyLink = {
     };
     url?: string;
   };
+  title?: string;
 };

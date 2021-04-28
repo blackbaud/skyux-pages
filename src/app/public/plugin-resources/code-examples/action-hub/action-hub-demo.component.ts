@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Configuration } from '../../../modules/action-hub/types/configuration';
+import { SkyActionHubConfiguration } from '../../../modules/action-hub/types/skyActionHubConfiguration';
 
 @Component({
   selector: 'app-action-hub-visual',
@@ -145,7 +145,7 @@ export class ActionHubDemoComponent {
     }
   ];
 
-  public configuration: Configuration = {
+  public configuration: SkyActionHubConfiguration = {
     title: 'Action Hub',
     needsAttention: this.needsAttention,
     recentLinks: this.recentLinks,

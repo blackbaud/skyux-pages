@@ -1,7 +1,7 @@
 <sky-docs-demo-page
   gitRepoUrl="https://github.com/blackbaud/skyux-pages"
   moduleName="SkyActionHubModule"
-  moduleSourceCodePath="src/app/public/modules/action-hub"
+  moduleSourceCodePath="src/app/public/modules/action-hub/"
   packageName="@skyux/pages"
   packageUrl="https://www.npmjs.com/package/@skyux/pages"
   pageTitle="Action Hub"
@@ -15,12 +15,7 @@
   </sky-docs-demo-page-summary>
 
   <sky-docs-demo>
-    <sky-action-hub
-      title="Action Hub"
-      [needsAttention]="needsAttention"
-      [recentLinks]="recentLinks"
-      [relatedLinks]="relatedLinks"
-    >
+    <sky-action-hub [data]="data">
       <sky-action-hub-content>
         <h2 class="sky-font-heading-2">Additional Content</h2>
         <p>Additional content can go here as needed for the functional area</p>
@@ -134,6 +129,7 @@
 
   <sky-docs-code-examples>
     <sky-docs-code-example
+      heading="Action Hub"
       sourceCodePath="src/app/public/plugin-resources/code-examples/action-hub"
     ></sky-docs-code-example>
   </sky-docs-code-examples>

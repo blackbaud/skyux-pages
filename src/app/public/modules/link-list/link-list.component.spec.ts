@@ -11,8 +11,7 @@ describe('Link list component', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [SkyActionHubModule]
-    }).compileComponents();
-
+    });
     fixture = TestBed.createComponent(SkyLinkListComponent);
   });
 

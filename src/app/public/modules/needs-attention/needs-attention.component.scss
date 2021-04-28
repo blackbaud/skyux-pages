@@ -1,16 +1,15 @@
 @import "~@skyux/theme/scss/variables";
 @import "~@skyux/theme/scss/mixins";
 
-.needs-attention-container {
+.sky-needs-attention-container {
   background-color: #fff;
 }
 
-.needs-attention-item {
+.sky-needs-attention-item {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
 
-  &-details,
   &-icon {
     color: $sky-theme-modern-font-deemphasized-color;
   }

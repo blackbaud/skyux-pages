@@ -1,33 +1,35 @@
 <div
-  class="needs-attention-container"
+  class="sky-needs-attention-container"
   [skyThemeClass]="{
     'sky-padding-even-large sky-shadow': 'default',
     'sky-box sky-elevation-1-bordered sky-padding-even-xl': 'modern'
   }"
 >
-  <h2 class="sky-font-heading-4">{{ 'Needs Attention' | skyLibResources }}</h2>
+  <h2 class="sky-font-heading-4">
+    {{ 'sky_action_hub_needs_attention' | skyLibResources }}
+  </h2>
   <sky-fluid-grid [gutterSize]="gutterSize" [disableMargin]="true">
     <sky-row>
       <sky-column
         *ngFor="let item of items; let isLast = last"
-        screenXSmall="12"
         [screenSmall]="items.length > 6 ? 6 : 12"
+        [screenXSmall]="12"
       >
         <ng-template #link>
           <sky-icon
             *skyThemeIf="'default'"
-            class="needs-attention-item-icon"
+            class="sky-needs-attention-item-icon"
             icon="chevron-right"
           ></sky-icon>
           <sky-icon
             *skyThemeIf="'modern'"
-            class="needs-attention-item-icon"
+            class="sky-needs-attention-item-icon"
             icon="chevron-right"
             iconType="skyux"
           ></sky-icon>
           <sky-key-info
             layout="horizontal"
-            class="needs-attention-item-key-info"
+            class="sky-needs-attention-item-key-info"
           >
             <sky-key-info-label>{{ item.message }}</sky-key-info-label>
             <sky-key-info-value
@@ -42,15 +44,15 @@
         </ng-template>
         <a
           *ngIf="item.permalink.route"
-          class="needs-attention-item sky-padding-vertical-lg sky-border-bottom-row"
           [routerLink]="item.permalink.route"
+          class="sky-needs-attention-item sky-padding-vertical-lg sky-border-bottom-row"
         >
           <ng-container *ngTemplateOutlet="link"></ng-container>
         </a>
         <a
           *ngIf="item.permalink.url"
-          class="needs-attention-item sky-padding-vertical-lg sky-border-bottom-row"
           [href]="item.permalink.url"
+          class="sky-needs-attention-item sky-padding-vertical-lg sky-border-bottom-row"
         >
           <ng-container *ngTemplateOutlet="link"></ng-container>
         </a>

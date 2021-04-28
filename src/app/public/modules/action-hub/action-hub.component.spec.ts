@@ -1,22 +1,31 @@
-import { TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick
+} from '@angular/core/testing';
 import { expect } from '@skyux-sdk/testing';
 
 import { SkyActionHubComponent } from './action-hub.component';
 import { SkyActionHubModule } from './action-hub.module';
 
 describe('Action hub component', async () => {
+  let fixture: ComponentFixture<SkyActionHubComponent>;
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [SkyActionHubModule]
-    }).compileComponents();
+    });
+    fixture = TestBed.createComponent(SkyActionHubComponent);
   });
 
   it('should show the title', () => {
-    const fixture = TestBed.createComponent(SkyActionHubComponent);
-    fixture.componentInstance.title = 'Test Hub';
-    fixture.componentInstance.relatedLinks = [];
-    fixture.componentInstance.recentLinks = [];
-    fixture.componentInstance.needsAttention = [];
+    fixture.componentInstance.data = {
+      needsAttention: [],
+      recentLinks: [],
+      relatedLinks: [],
+      title: 'Test Hub'
+    };
 
     fixture.detectChanges();
     const h1 = fixture.nativeElement.querySelector('h1');
@@ -24,18 +33,19 @@ describe('Action hub component', async () => {
   });
 
   it('should show related links', async () => {
-    const fixture = TestBed.createComponent(SkyActionHubComponent);
-    fixture.componentInstance.title = 'Test Hub';
-    fixture.componentInstance.relatedLinks = [
-      {
-        label: 'Test Link',
-        permalink: {
-          url: '#'
+    fixture.componentInstance.data = {
+      needsAttention: [],
+      recentLinks: [],
+      relatedLinks: [
+        {
+          label: 'Test Link',
+          permalink: {
+            url: '#'
+          }
         }
-      }
-    ];
-    fixture.componentInstance.recentLinks = [];
-    fixture.componentInstance.needsAttention = [];
+      ],
+      title: 'Test Hub'
+    };
 
     fixture.detectChanges();
     await fixture.whenStable();
@@ -46,12 +56,10 @@ describe('Action hub component', async () => {
   });
 
   it('should use a config object', () => {
-    const fixture = TestBed.createComponent(SkyActionHubComponent);
-    fixture.componentInstance.config = {
-      title: 'Test Hub',
-      relatedLinks: [
+    fixture.componentInstance.data = {
+      needsAttention: [
         {
-          label: 'Test Link',
+          title: 'Test item',
           permalink: {
             url: '#'
           }
@@ -65,14 +73,15 @@ describe('Action hub component', async () => {
           }
         }
       ],
-      needsAttention: [
+      relatedLinks: [
         {
-          title: 'Test item',
+          label: 'Test Link',
           permalink: {
             url: '#'
           }
         }
-      ]
+      ],
+      title: 'Test Hub'
     };
     fixture.detectChanges();
     const h1 = fixture.nativeElement.querySelector('h1');
@@ -87,13 +96,10 @@ describe('Action hub component', async () => {
     expect(recent1).toHaveText('Recent Link');
   });
 
-  it('should work with an empty config object', () => {
-    const fixture = TestBed.createComponent(SkyActionHubComponent);
-    fixture.componentInstance.config = {
-      title: 'Test Hub'
-    };
+  it('should show loading', fakeAsync(() => {
     fixture.detectChanges();
-    const h1 = fixture.nativeElement.querySelector('h1');
-    expect(h1).toHaveText('Test Hub');
-  });
+    tick(1000);
+    const skyWait = fixture.nativeElement.querySelector('.sky-wait');
+    expect(skyWait).toExist();
+  }));
 });

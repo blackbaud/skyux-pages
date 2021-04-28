@@ -6,7 +6,6 @@ import { SkyActionHubModule } from './public/public_api';
 
 @NgModule({
   exports: [SkyActionHubModule, SkyAppLinkModule, SkyDocsToolsModule],
-  entryComponents: [],
   providers: [
     {
       provide: SkyDocsToolsOptions,

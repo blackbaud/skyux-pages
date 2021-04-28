@@ -2,12 +2,7 @@
   (themeSettingsChange)="themeSettingsChange($event)"
 ></sky-docs-demo-control-panel-theme>
 
-<sky-action-hub
-  title="Action Hub"
-  [needsAttention]="needsAttention"
-  [recentLinks]="recentLinks"
-  [relatedLinks]="relatedLinks"
->
+<sky-action-hub [data]="data">
   <sky-action-hub-buttons *ngIf="buttons">
     <a
       *ngFor="let button of buttons"
