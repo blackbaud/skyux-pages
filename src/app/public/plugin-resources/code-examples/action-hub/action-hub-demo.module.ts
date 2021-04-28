@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SkyActionHubModule } from '@skyux/pages';
+
+import { SkyActionHubModule } from '../../../modules/action-hub/action-hub.module';
 
 import { ActionHubDemoComponent } from './action-hub-demo.component';
 
