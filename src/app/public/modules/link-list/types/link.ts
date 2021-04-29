@@ -5,7 +5,7 @@ export type SkyLink = {
   permalink?: {
     route?: {
       commands: any[];
-      extras: NavigationExtras;
+      extras?: NavigationExtras;
     };
     url?: string;
   };
