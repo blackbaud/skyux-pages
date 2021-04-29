@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { SkyLink } from './types/link';
+import { SkyLink } from '../action-hub/types/link';
 
 @Component({
   selector: 'sky-link-list',
