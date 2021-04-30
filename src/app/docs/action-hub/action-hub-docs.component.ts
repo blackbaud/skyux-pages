@@ -4,6 +4,7 @@ import { SkyActionHubData } from '../../public/modules/action-hub/types/action-h
 
 @Component({
   selector: 'app-action-hub-docs',
+  styleUrls: ['action-hub-docs.component.scss'],
   templateUrl: 'action-hub-docs.component.html'
 })
 export class ActionHubDocsComponent {
@@ -73,4 +74,8 @@ export class ActionHubDocsComponent {
       }
     ]
   };
+
+  public buttonClick($event: MouseEvent) {
+    alert('You did it!');
+  }
 }

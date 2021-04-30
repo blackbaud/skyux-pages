@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { SkyFluidGridGutterSize } from '@skyux/layout';
 
-import { SkyActionHubNeedsAttention } from './types/action-hub-needs-attention';
+import { SkyActionHubNeedsAttention } from '../action-hub/types/action-hub-needs-attention';
 
 @Component({
   selector: 'sky-needs-attention',

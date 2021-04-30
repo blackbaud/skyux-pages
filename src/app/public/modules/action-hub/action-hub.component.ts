@@ -1,17 +1,24 @@
 import { Component, Input } from '@angular/core';
 
-import { SkyLink } from '../link-list/types/link';
-import { SkyActionHubNeedsAttention } from '../needs-attention/types/action-hub-needs-attention';
-
 import { SkyActionHubData } from './types/action-hub-data';
+import { SkyActionHubNeedsAttention } from './types/action-hub-needs-attention';
+import { SkyPageLink } from './types/page-link';
 
 let data: SkyActionHubData;
 
+/**
+ * Wrapper component for the Action Hub.
+ */
 @Component({
   selector: 'sky-action-hub',
   templateUrl: './action-hub.component.html'
 })
 export class SkyActionHubComponent {
+  /**
+   * Pass an SkyActionHubData object to build the screen. The page will be loading until `title` has a value.
+   *
+   * @param value
+   */
   @Input()
   public set data(value: typeof data) {
     this.needsAttention = value.needsAttention;
@@ -22,9 +29,9 @@ export class SkyActionHubComponent {
 
   public needsAttention: SkyActionHubNeedsAttention[];
 
-  public recentLinks: SkyLink[];
+  public recentLinks: SkyPageLink[];
 
-  public relatedLinks: SkyLink[];
+  public relatedLinks: SkyPageLink[];
 
   public title = '';
 

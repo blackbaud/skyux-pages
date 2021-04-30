@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { SkyLink } from './types/link';
+import { SkyPageLink } from '../action-hub/types/page-link';
 
 @Component({
   selector: 'sky-link-list',
@@ -9,7 +9,7 @@ import { SkyLink } from './types/link';
 })
 export class SkyLinkListComponent {
   @Input()
-  public links: SkyLink[];
+  public links: SkyPageLink[];
 
   @Input()
   public title: string;
