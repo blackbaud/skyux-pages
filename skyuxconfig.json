@@ -3,9 +3,7 @@
   "name": "skyux-pages",
   "mode": "easy",
   "compileMode": "aot",
-  "plugins": [
-    "@skyux-sdk/builder-plugin-skyux"
-  ],
+  "plugins": ["@skyux-sdk/builder-plugin-skyux"],
   "testSettings": {
     "e2e": {
       "browserSet": "speedy"
@@ -27,15 +25,10 @@
     }
   },
   "app": {
-    "styles": [
-      "@skyux/docs-tools/css/docs-tools.css"
-    ],
+    "styles": ["@skyux/docs-tools/css/docs-tools.css"],
     "theming": {
-      "supportedThemes": [
-        "default",
-        "modern"
-      ],
-      "theme": "default"
+      "supportedThemes": ["default", "modern"],
+      "theme": "modern"
     }
   },
   "host": {
@@ -47,7 +40,7 @@
   "omnibar": {},
   "params": {
     "svcid": {
-      "value": "skyux"
+      "value": "skyux-modern"
     }
   }
 }
