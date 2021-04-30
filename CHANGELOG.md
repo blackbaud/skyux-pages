@@ -1,3 +1,4 @@
-# x.x.x (yyyy-mm-dd)
+# 4.0.0b0 (2021-04-30)
 
-- Comments here.
+- Created Action Hub template component. [#1](https://github.com/blackbaud/skyux-pages/pull/1)
+
