@@ -1,6 +1,6 @@
 {
   "name": "@skyux/pages",
-  "version": "0.0.1",
+  "version": "4.0.0-beta.0",
   "description": "SKY UX Pages",
   "scripts": {
     "build": "skyux build-public-library --fullTemplateTypeCheck",
@@ -53,9 +53,9 @@
     "@skyux/i18n": "4.1.0",
     "@skyux/indicators": "4.9.2",
     "@skyux/inline-form": "4.1.1",
-    "@skyux/layout": "4.6.0",
+    "@skyux/layout": "4.6.2",
     "@skyux/lists": "4.7.1",
-    "@skyux/lookup": "4.10.0",
+    "@skyux/lookup": "4.11.0",
     "@skyux/modals": "4.5.2",
     "@skyux/omnibar-interop": "4.0.1",
     "@skyux/popovers": "4.5.1",
