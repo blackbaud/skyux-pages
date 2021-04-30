@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 import { SkyActionHubData } from './types/action-hub-data';
 import { SkyActionHubNeedsAttention } from './types/action-hub-needs-attention';
-import { SkyLink } from './types/link';
+import { SkyPageLink } from './types/page-link';
 
 let data: SkyActionHubData;
 
@@ -29,9 +29,9 @@ export class SkyActionHubComponent {
 
   public needsAttention: SkyActionHubNeedsAttention[];
 
-  public recentLinks: SkyLink[];
+  public recentLinks: SkyPageLink[];
 
-  public relatedLinks: SkyLink[];
+  public relatedLinks: SkyPageLink[];
 
   public title = '';
 

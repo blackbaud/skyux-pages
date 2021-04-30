@@ -1,5 +1,5 @@
 import { SkyActionHubNeedsAttention } from './action-hub-needs-attention';
-import { SkyLink } from './link';
+import { SkyPageLink } from './page-link';
 
 /**
  * Data object that drives the Action Hub, intended to be loaded from a HTTP service.
@@ -16,9 +16,9 @@ export interface SkyActionHubData {
   /**
    * Display the five items most recently accessed by the user in reverse chronological order.
    */
-  recentLinks?: SkyLink[];
+  recentLinks?: SkyPageLink[];
   /**
    * Related links should be displayed in alphabetical order.
    */
-  relatedLinks?: SkyLink[];
+  relatedLinks?: SkyPageLink[];
 }

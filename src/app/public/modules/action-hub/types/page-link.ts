@@ -3,7 +3,7 @@ import { NavigationExtras } from '@angular/router';
 /**
  * Used to display related and recently accessed links.
  */
-export interface SkyLink {
+export interface SkyPageLink {
   /**
    * Link text
    */
