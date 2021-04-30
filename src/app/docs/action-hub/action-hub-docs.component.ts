@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 
-import { SkyActionHubData } from '../../public/modules/action-hub/types/action-hub-data';
-
 @Component({
   selector: 'app-action-hub-docs',
   styleUrls: ['action-hub-docs.component.scss'],
   templateUrl: 'action-hub-docs.component.html'
 })
 export class ActionHubDocsComponent {
-  public data: SkyActionHubData = {
+  public data = {
     title: 'Action Hub',
     needsAttention: [
       {
