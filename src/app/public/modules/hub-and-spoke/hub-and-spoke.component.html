@@ -1,13 +1,13 @@
 <span class="sky-hub-and-spoke">
   <span class="sky-hub-and-spoke-hub-link">
     <a
-      *ngIf="hubLink.permalink.url"
+      *ngIf="hubLink.permalink?.url"
       [href]="hubLink.permalink.url"
       class="sky-font-heading-1"
       >{{ hubLink.label }}</a
     >
     <a
-      *ngIf="hubLink.permalink.route"
+      *ngIf="hubLink.permalink?.route"
       [routerLink]="hubLink.permalink.route"
       class="sky-font-heading-1"
       >{{ hubLink.label }}</a
