@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ActionHubDocsComponent {
   public data = {
-    title: 'Action Hub',
+    title: 'Page title',
     needsAttention: [
       {
         title: '1 update',
