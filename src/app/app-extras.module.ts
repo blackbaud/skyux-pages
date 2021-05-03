@@ -2,10 +2,15 @@ import { NgModule } from '@angular/core';
 import { SkyDocsToolsModule, SkyDocsToolsOptions } from '@skyux/docs-tools';
 import { SkyAppLinkModule } from '@skyux/router';
 
-import { SkyActionHubModule } from './public/public_api';
+import { SkyActionHubModule, SkyHubAndSpokeModule } from './public/public_api';
 
 @NgModule({
-  exports: [SkyActionHubModule, SkyAppLinkModule, SkyDocsToolsModule],
+  exports: [
+    SkyActionHubModule,
+    SkyHubAndSpokeModule,
+    SkyAppLinkModule,
+    SkyDocsToolsModule
+  ],
   providers: [
     {
       provide: SkyDocsToolsOptions,
