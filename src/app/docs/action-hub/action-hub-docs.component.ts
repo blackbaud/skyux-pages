@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SkyConfirmService, SkyConfirmType } from '@skyux/modals';
 
 @Component({
   selector: 'app-action-hub-docs',
@@ -73,7 +74,12 @@ export class ActionHubDocsComponent {
     ]
   };
 
+  constructor(private confirmService: SkyConfirmService) {}
+
   public buttonClick($event: MouseEvent) {
-    alert('You did it!');
+    this.confirmService.open({
+      message: `You pressed “${($event.target as HTMLButtonElement).textContent.trim()}”`,
+      type: SkyConfirmType.OK
+    });
   }
 }

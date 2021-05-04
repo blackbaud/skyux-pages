@@ -9,9 +9,9 @@ export interface SkyPageLink {
    */
   label: string;
   /**
-   * Link destination
+   * Link destination, either as an Angular route or URL
    */
-  permalink?: {
+  permalink: {
     route?: {
       commands: any[];
       extras?: NavigationExtras;

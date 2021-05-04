@@ -8,7 +8,7 @@ export interface SkyActionHubData {
   /**
    * Page title for this screen. Before the title is set, the screen will show as loading.
    */
-  title?: string;
+  title: string;
   /**
    * List of actions that need attention with link to where the item would be resolved.
    */

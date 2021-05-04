@@ -22,17 +22,63 @@
           type="button"
           class="sky-btn sky-btn-default"
         >
-          Click Me
+          <sky-icon *skyThemeIf="'default'" icon="plus-circle"></sky-icon>
+          <sky-icon
+            *skyThemeIf="'modern'"
+            icon="add"
+            iconType="skyux"
+          ></sky-icon>
+          New
+        </button>
+        {{ ' ' }}
+        <button
+          (click)="buttonClick($event)"
+          type="button"
+          class="sky-btn sky-btn-default"
+        >
+          <sky-icon *skyThemeIf="'default'" icon="pencil"></sky-icon>
+          <sky-icon
+            *skyThemeIf="'modern'"
+            icon="edit"
+            iconType="skyux"
+          ></sky-icon>
+          Action 1
+        </button>
+        {{ ' ' }}
+        <button
+          (click)="buttonClick($event)"
+          type="button"
+          class="sky-btn sky-btn-default"
+        >
+          <sky-icon *skyThemeIf="'default'" icon="folder-open-o"></sky-icon>
+          <sky-icon
+            *skyThemeIf="'modern'"
+            icon="open"
+            iconType="skyux"
+          ></sky-icon>
+          Action 2
+        </button>
+        {{ ' ' }}
+        <button
+          (click)="buttonClick($event)"
+          type="button"
+          class="sky-btn sky-btn-default"
+        >
+          <sky-icon *skyThemeIf="'default'" icon="list"></sky-icon>
+          <sky-icon
+            *skyThemeIf="'modern'"
+            icon="ellipsis"
+            iconType="skyux"
+          ></sky-icon>
+          Action 3
         </button>
       </sky-action-hub-buttons>
       <sky-action-hub-content>
         <div
           class="sky-action-hub-docs-demo sky-action-hub-docs-demo-additional-content sky-box"
         >
-          <h2 class="sky-font-heading-2">Additional Content</h2>
-          <p>
-            Additional content can go here as needed for the functional area
-          </p>
+          <h2 class="sky-font-heading-2">Additional content</h2>
+          <p>More content can go here as needed for the functional area.</p>
         </div>
       </sky-action-hub-content>
     </sky-action-hub>

@@ -7,15 +7,15 @@ export interface SkyActionHubNeedsAttention {
   /**
    * Bold text for the action item
    */
-  title?: string;
+  title: string;
   /**
    * De-emphasized text for action item
    */
   message?: string;
   /**
-   * Link to where to resolve action
+   * Link to where to resolve action, either as an Angular route or URL
    */
-  permalink?: {
+  permalink: {
     route?: {
       commands: any[];
       extras?: NavigationExtras;
