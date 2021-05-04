@@ -7,8 +7,13 @@ import { SkyAppLinkModule } from '@skyux/router';
 import { SkyActionHubModule } from './public/public_api';
 
 @NgModule({
-  exports: [SkyActionHubModule, SkyAppLinkModule, SkyDocsToolsModule],
-  imports: [SkyConfirmModule, SkyIconModule],
+  exports: [
+    SkyActionHubModule,
+    SkyAppLinkModule,
+    SkyConfirmModule,
+    SkyDocsToolsModule,
+    SkyIconModule
+  ],
   providers: [
     {
       provide: SkyDocsToolsOptions,
