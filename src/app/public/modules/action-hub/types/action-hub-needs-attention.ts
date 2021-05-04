@@ -8,7 +8,7 @@ export interface SkyActionHubNeedsAttention {
   /**
    * Specifies a bold title to display at the start of the action item.
    */
-  title?: string;
+  title: string;
   /**
    * Specifies de-emphasized text to display after the title.
    */
@@ -16,7 +16,7 @@ export interface SkyActionHubNeedsAttention {
   /**
    * Specifies a link to resolve the action item.
    */
-  permalink?: {
+  permalink: {
     route?: {
       commands: any[];
       extras?: NavigationExtras;

@@ -11,7 +11,7 @@ export interface SkyPageLink {
   /**
    * Specifies the link destination.
    */
-  permalink?: {
+  permalink: {
     route?: {
       commands: any[];
       extras?: NavigationExtras;

@@ -8,7 +8,7 @@ export interface SkyActionHubData {
   /**
    * Specifies a page title for the action hub. The page loads until `title` has a value.
    */
-  title?: string;
+  title: string;
   /**
    * Specifies action items that require attention and links to resolve them.
    */

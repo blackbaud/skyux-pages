@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import { SkyActionHubData } from '../../public/modules/action-hub/types/action-hub-data';
+import { SkyConfirmService, SkyConfirmType } from '@skyux/modals';
 
 @Component({
   selector: 'app-action-hub-docs',
@@ -8,8 +7,8 @@ import { SkyActionHubData } from '../../public/modules/action-hub/types/action-h
   templateUrl: 'action-hub-docs.component.html'
 })
 export class ActionHubDocsComponent {
-  public data: SkyActionHubData = {
-    title: 'Action Hub',
+  public data = {
+    title: 'Page title',
     needsAttention: [
       {
         title: '1 update',
@@ -75,7 +74,12 @@ export class ActionHubDocsComponent {
     ]
   };
 
+  constructor(private confirmService: SkyConfirmService) {}
+
   public buttonClick($event: MouseEvent) {
-    alert('You did it!');
+    this.confirmService.open({
+      message: `You pressed “${($event.target as HTMLButtonElement).textContent.trim()}”`,
+      type: SkyConfirmType.OK
+    });
   }
 }
