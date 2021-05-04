@@ -5,20 +5,20 @@ import { expect } from '@skyux-sdk/testing';
 import { SkyIconModule } from '@skyux/indicators';
 import { SkyThemeModule } from '@skyux/theme';
 
-import { HubAndSpokeFixturesComponent } from './fixtures/hub-and-spoke-fixtures.component';
-import { SkyHubAndSpokeComponent } from './hub-and-spoke.component';
+import { PageHeaderFixturesComponent } from './fixtures/page-header-fixtures.component';
+import { SkyPageHeaderComponent } from './page-header.component';
 
-describe('Hub and spoke component', () => {
+describe('Page header component', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HubAndSpokeFixturesComponent, SkyHubAndSpokeComponent],
+      declarations: [PageHeaderFixturesComponent, SkyPageHeaderComponent],
       imports: [RouterModule, CommonModule, SkyThemeModule, SkyIconModule]
     });
   });
 
-  it('should create a hub and spoke', () => {
-    const fixture = TestBed.createComponent(HubAndSpokeFixturesComponent);
+  it('should create a page header', () => {
+    const fixture = TestBed.createComponent(PageHeaderFixturesComponent);
     fixture.detectChanges();
-    expect(fixture.nativeElement).toHaveText('Hub Page Spoke Page');
+    expect(fixture.nativeElement).toHaveText('Parent Link Page Title');
   });
 });

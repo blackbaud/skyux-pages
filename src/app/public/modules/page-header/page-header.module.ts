@@ -4,11 +4,11 @@ import { RouterModule } from '@angular/router';
 import { SkyIconModule } from '@skyux/indicators';
 import { SkyThemeModule } from '@skyux/theme';
 
-import { SkyHubAndSpokeComponent } from './hub-and-spoke.component';
+import { SkyPageHeaderComponent } from './page-header.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule, SkyIconModule, SkyThemeModule],
-  declarations: [SkyHubAndSpokeComponent],
-  exports: [SkyHubAndSpokeComponent]
+  declarations: [SkyPageHeaderComponent],
+  exports: [SkyPageHeaderComponent]
 })
-export class SkyHubAndSpokeModule {}
+export class SkyPageHeaderModule {}

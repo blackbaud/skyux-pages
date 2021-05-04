@@ -1,23 +1,22 @@
 @import "~@skyux/theme/scss/variables";
 @import "~@skyux/theme/scss/themes/modern/_compat/variables";
 
-.sky-hub-and-spoke {
-  &-hub-link,
-  &-spoke-title {
+.sky-page-header {
+  &-parent-link,
+  &-page-title {
     display: inline-block;
     block-size: fit-content;
   }
 
-  &-hub-link,
-  &-hub-link a{
+  &-parent-link,
+  &-parent-link a{
     color: $sky-text-color-action-primary;
   }
-
-  :host-context(.sky-theme-modern)
 
   &-midline-centered {
     position: relative;
     top: -0.4em;
+    font-size: 0.4em;
   }
 
   &-nbsp:before {
@@ -30,18 +29,18 @@
 }
 
 :host-context(.sky-theme-modern) {
-  .sky-hub-and-spoke {
-    &-hub-link,
-    &-hub-link a {
+  .sky-page-header {
+    &-parent-link,
+    &-parent-link a {
       color: $sky-theme-modern-text-color-action-primary;
     }
   }
 }
 
 :host-context(.sky-theme-modern.sky-theme-mode-dark) {
-  .sky-hub-and-spoke {
-    &-hub-link,
-    &-hub-link a {
+  .sky-page-header {
+    &-parent-link,
+    &-parent-link a {
       color: $sky-theme-modern-mode-dark-text-color-action-primary;
     }
   }

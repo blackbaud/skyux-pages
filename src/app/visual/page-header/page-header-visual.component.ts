@@ -2,21 +2,21 @@ import { Component } from '@angular/core';
 import { SkyThemeService, SkyThemeSettings } from '@skyux/theme';
 
 @Component({
-  selector: 'sky-hub-and-spoke-visual',
-  templateUrl: './hub-and-spoke-visual.component.html'
+  selector: 'sky-page-header-visual',
+  templateUrl: './page-header-visual.component.html'
 })
-export class HubAndSpokeVisualComponent {
-  public spokeTitle = 'Spoke Page';
-  public hubLink = {
-    label: 'Hub Page',
+export class PageHeaderVisualComponent {
+  public pageTitle = 'Page Title';
+  public parentLink = {
+    label: 'Parent Link',
     permalink: {
       url: '#'
     }
   };
   public spokeTitleLong =
-    'Spoke Page also has a Title that some might Think is Long';
+    'Page Title has extra words that some might think go too far';
   public hubLinkLong = {
-    label: 'Hub Page with a Title that has More Words than you might expect',
+    label: 'Parent Link with a Title that has More Words than you might expect',
     permalink: {
       url: '#'
     }

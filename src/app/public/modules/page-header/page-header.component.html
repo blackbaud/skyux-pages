@@ -1,0 +1,30 @@
+<h1 class="sky-page-header">
+  <span *ngIf="parentLink" class="sky-page-header-parent-link">
+    <a
+      *ngIf="parentLink.permalink?.url"
+      [href]="parentLink.permalink.url"
+      class="sky-font-heading-1"
+      >{{ parentLink.label }}</a
+    >
+    <a
+      *ngIf="parentLink.permalink?.route"
+      [routerLink]="parentLink.permalink.route"
+      class="sky-font-heading-1"
+      >{{ parentLink.label }}</a
+    >
+    <span class="sky-page-header-space"></span>
+    <span class="sky-page-header-midline-centered">
+      <sky-icon *skyThemeIf="'default'" icon="chevron-right"></sky-icon>
+      <sky-icon
+        *skyThemeIf="'modern'"
+        icon="chevron-right"
+        iconType="skyux"
+      ></sky-icon>
+    </span>
+    <span class="sky-page-header-space"></span>
+  </span>
+  <wbr *ngIf="parentLink" />
+  <span class="sky-page-header-page-title sky-font-heading-1">
+    {{ pageTitle }}
+  </span>
+</h1>
