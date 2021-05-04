@@ -1,15 +1,15 @@
 import { NavigationExtras } from '@angular/router';
 
 /**
- * Used to display related and recently accessed links.
+ * Displays links to related information or recently accessed items.
  */
 export interface SkyPageLink {
   /**
-   * Link text
+   * Specifies the link text.
    */
   label: string;
   /**
-   * Link destination, either as an Angular route or URL
+   * Specifies the link destination.
    */
   permalink: {
     route?: {
