@@ -2,36 +2,31 @@
 @import "~@skyux/theme/scss/themes/modern/_compat/variables";
 
 .sky-page-header {
-  &-parent-link,
-  &-page-title {
+  &-page-title,
+  &-parent-link-wrapper {
     display: inline-block;
     block-size: fit-content;
   }
 
-  &-parent-link,
-  &-parent-link a{
+  &-parent-link {
     color: $sky-text-color-action-primary;
   }
 
-  &-midline-centered {
-    position: relative;
-    top: -0.4em;
-    font-size: 0.4em;
+  &-chevron {
+    font-size: 16px;
+    margin: 0 $sky-space-md;
   }
 
-  &-nbsp:before {
-    content: "\00a0\00a0";
-  }
-
-  &-space:before {
-    content: "\00a0 ";
+  &-chevron,
+  &-parent-link,
+  &-page-title {
+    vertical-align: middle;
   }
 }
 
 :host-context(.sky-theme-modern) {
   .sky-page-header {
-    &-parent-link,
-    &-parent-link a {
+    &-parent-link {
       color: $sky-theme-modern-text-color-action-primary;
     }
   }
@@ -39,8 +34,7 @@
 
 :host-context(.sky-theme-modern.sky-theme-mode-dark) {
   .sky-page-header {
-    &-parent-link,
-    &-parent-link a {
+    &-parent-link {
       color: $sky-theme-modern-mode-dark-text-color-action-primary;
     }
   }
