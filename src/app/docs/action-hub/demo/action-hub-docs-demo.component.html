@@ -15,17 +15,11 @@
         type="button"
         class="sky-btn sky-btn-default sky-margin-inline-sm"
       >
-        <sky-icon *skyThemeIf="'default'" icon="pencil"></sky-icon>
-        <sky-icon
-          *skyThemeIf="'modern'"
-          icon="edit"
-          iconType="skyux"
-        ></sky-icon>
         Action 2
       </button>
       <span class="sky-action-hub-docs-demo-inline">
         <sky-dropdown>
-          <sky-dropdown-button> More actions </sky-dropdown-button>
+          <sky-dropdown-button>More</sky-dropdown-button>
           <sky-dropdown-menu>
             <sky-dropdown-item *ngFor="let item of dropdownItems">
               <button type="button" (click)="buttonClick($event)">
