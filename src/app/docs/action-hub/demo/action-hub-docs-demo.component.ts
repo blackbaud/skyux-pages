@@ -77,6 +77,11 @@ export class ActionHubDocsDemoComponent implements AfterViewInit {
   @ViewChild('actionHubComponent')
   public actionHubComponent: ElementRef;
 
+  public get dropdownItems(): string[] {
+    const offset = 3;
+    return Array.from(Array(3).keys()).map((i) => `Action ${i + offset}`);
+  }
+
   constructor(private confirmService: SkyConfirmService) {}
 
   public ngAfterViewInit(): void {

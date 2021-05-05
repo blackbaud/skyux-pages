@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { SkyDocsToolsModule, SkyDocsToolsOptions } from '@skyux/docs-tools';
 import { SkyIconModule } from '@skyux/indicators';
 import { SkyConfirmModule } from '@skyux/modals';
+import { SkyDropdownModule } from '@skyux/popovers';
 import { SkyAppLinkModule } from '@skyux/router';
 
 import { SkyActionHubModule } from './public/public_api';
@@ -12,6 +13,7 @@ import { SkyActionHubModule } from './public/public_api';
     SkyAppLinkModule,
     SkyConfirmModule,
     SkyDocsToolsModule,
+    SkyDropdownModule,
     SkyIconModule
   ],
   providers: [

@@ -4,17 +4,16 @@
       <button
         (click)="buttonClick($event)"
         type="button"
-        class="sky-btn sky-btn-default"
+        class="sky-btn sky-btn-default sky-margin-inline-sm"
       >
         <sky-icon *skyThemeIf="'default'" icon="plus-circle"></sky-icon>
         <sky-icon *skyThemeIf="'modern'" icon="add" iconType="skyux"></sky-icon>
         New
       </button>
-      {{ ' ' }}
       <button
         (click)="buttonClick($event)"
         type="button"
-        class="sky-btn sky-btn-default"
+        class="sky-btn sky-btn-default sky-margin-inline-sm"
       >
         <sky-icon *skyThemeIf="'default'" icon="pencil"></sky-icon>
         <sky-icon
@@ -22,36 +21,20 @@
           icon="edit"
           iconType="skyux"
         ></sky-icon>
-        Action 1
-      </button>
-      {{ ' ' }}
-      <button
-        (click)="buttonClick($event)"
-        type="button"
-        class="sky-btn sky-btn-default"
-      >
-        <sky-icon *skyThemeIf="'default'" icon="folder-open-o"></sky-icon>
-        <sky-icon
-          *skyThemeIf="'modern'"
-          icon="open"
-          iconType="skyux"
-        ></sky-icon>
         Action 2
       </button>
-      {{ ' ' }}
-      <button
-        (click)="buttonClick($event)"
-        type="button"
-        class="sky-btn sky-btn-default"
-      >
-        <sky-icon *skyThemeIf="'default'" icon="list"></sky-icon>
-        <sky-icon
-          *skyThemeIf="'modern'"
-          icon="ellipsis"
-          iconType="skyux"
-        ></sky-icon>
-        Action 3
-      </button>
+      <span class="sky-action-hub-docs-demo-inline">
+        <sky-dropdown>
+          <sky-dropdown-button> More actions </sky-dropdown-button>
+          <sky-dropdown-menu>
+            <sky-dropdown-item *ngFor="let item of dropdownItems">
+              <button type="button" (click)="buttonClick($event)">
+                {{ item }}
+              </button>
+            </sky-dropdown-item>
+          </sky-dropdown-menu>
+        </sky-dropdown>
+      </span>
     </sky-action-hub-buttons>
     <sky-action-hub-content>
       <div
