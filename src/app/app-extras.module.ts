@@ -5,7 +5,7 @@ import { SkyConfirmModule } from '@skyux/modals';
 import { SkyDropdownModule } from '@skyux/popovers';
 import { SkyAppLinkModule } from '@skyux/router';
 
-import { SkyActionHubModule } from './public/public_api';
+import { SkyActionHubModule, SkyPageHeaderModule } from './public/public_api';
 
 @NgModule({
   exports: [
@@ -14,7 +14,8 @@ import { SkyActionHubModule } from './public/public_api';
     SkyConfirmModule,
     SkyDocsToolsModule,
     SkyDropdownModule,
-    SkyIconModule
+    SkyIconModule,
+    SkyPageHeaderModule
   ],
   providers: [
     {
