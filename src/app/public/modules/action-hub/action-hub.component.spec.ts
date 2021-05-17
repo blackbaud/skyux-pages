@@ -67,10 +67,12 @@ describe('Action hub component', async () => {
 
     fixture.detectChanges();
     await fixture.whenStable();
-    const link1 = fixture.nativeElement.querySelector(
-      'sky-link-list[ng-reflect-title="Related Links"] a'
+    const linkList = fixture.nativeElement.querySelector(
+      'sky-link-list[ng-reflect-title="Related Links"]'
     );
-    expect(link1).toHaveText('Test Link A');
+    expect(linkList).toHaveText(
+      'Related Links  Test Link A  Test Link B  Test Link B  Test Link C'
+    );
   });
 
   it('should sort recently accessed links', async () => {
@@ -112,10 +114,10 @@ describe('Action hub component', async () => {
 
     fixture.detectChanges();
     await fixture.whenStable();
-    const link1 = fixture.nativeElement.querySelector(
+    const linkList = fixture.nativeElement.querySelector(
       'sky-link-list[ng-reflect-title="Recently Accessed"]'
     );
-    expect(link1).toHaveText(
+    expect(linkList).toHaveText(
       'Recently Accessed  Recent Link A  Recent Link B  Recent Link C  Recent Link D'
     );
   });
