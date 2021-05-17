@@ -18,7 +18,7 @@ let data: SkyActionHubData | undefined;
 export class SkyActionHubComponent {
   /**
    * Passes a SkyActionHubData object to build the action hub. The page loads until
-   * `title` has a value.
+   * `[data]` has a value.
    *
    * @param value
    */

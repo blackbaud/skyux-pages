@@ -7,7 +7,7 @@ import { SkyRecentLink } from './recent-link';
  */
 export interface SkyActionHubData {
   /**
-   * Specifies a page title for the action hub. The page loads until `title` has a value.
+   * Specifies a page title for the action hub.
    */
   title: string;
   /**
