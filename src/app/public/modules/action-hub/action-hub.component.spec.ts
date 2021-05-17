@@ -38,7 +38,25 @@ describe('Action hub component', async () => {
       recentLinks: [],
       relatedLinks: [
         {
-          label: 'Test Link',
+          label: 'Test Link B',
+          permalink: {
+            url: '#'
+          }
+        },
+        {
+          label: 'Test Link B',
+          permalink: {
+            url: '#'
+          }
+        },
+        {
+          label: 'Test Link C',
+          permalink: {
+            url: '#'
+          }
+        },
+        {
+          label: 'Test Link A',
           permalink: {
             url: '#'
           }
@@ -52,7 +70,54 @@ describe('Action hub component', async () => {
     const link1 = fixture.nativeElement.querySelector(
       'sky-link-list[ng-reflect-title="Related Links"] a'
     );
-    expect(link1).toHaveText('Test Link');
+    expect(link1).toHaveText('Test Link A');
+  });
+
+  it('should sort recently accessed links', async () => {
+    fixture.componentInstance.data = {
+      needsAttention: [],
+      recentLinks: [
+        {
+          label: 'Recent Link B',
+          permalink: {
+            url: '#'
+          },
+          lastAccessed: '2011-10-05T14:48:00.000Z'
+        },
+        {
+          label: 'Recent Link A',
+          permalink: {
+            url: '#'
+          },
+          lastAccessed: new Date('2011-10-06T14:48:00.000Z')
+        },
+        {
+          label: 'Recent Link C',
+          permalink: {
+            url: '#'
+          },
+          lastAccessed: new Date('2011-10-04T14:48:00.000Z')
+        },
+        {
+          label: 'Recent Link D',
+          permalink: {
+            url: '#'
+          },
+          lastAccessed: '2011-10-04T14:48:00.000Z'
+        }
+      ],
+      relatedLinks: [],
+      title: 'Test Hub'
+    };
+
+    fixture.detectChanges();
+    await fixture.whenStable();
+    const link1 = fixture.nativeElement.querySelector(
+      'sky-link-list[ng-reflect-title="Recently Accessed"]'
+    );
+    expect(link1).toHaveText(
+      'Recently Accessed  Recent Link A  Recent Link B  Recent Link C  Recent Link D'
+    );
   });
 
   it('should use a config object', () => {
@@ -70,7 +135,8 @@ describe('Action hub component', async () => {
           label: 'Recent Link',
           permalink: {
             url: '#'
-          }
+          },
+          lastAccessed: '2011-10-05T14:48:00.000Z'
         }
       ],
       relatedLinks: [
@@ -97,6 +163,7 @@ describe('Action hub component', async () => {
   });
 
   it('should show loading', fakeAsync(() => {
+    fixture.componentInstance.data = undefined;
     fixture.detectChanges();
     tick(1000);
     const skyWait = fixture.nativeElement.querySelector('.sky-wait');

@@ -20,6 +20,7 @@
       </div>
 
       <div
+        *ngIf="needsAttention?.length > 0"
         [skyThemeClass]="{
           'sky-margin-stacked-separate': 'default',
           'sky-margin-stacked-xxl': 'modern'
@@ -39,11 +40,11 @@
     </sky-column>
     <sky-column screenLarge="3" screenXSmall="12">
       <sky-link-list
-        [links]="relatedLinks"
+        [links]="getRelatedLinksSorted()"
         [title]="'sky_action_hub_related_links' | skyLibResources"
       ></sky-link-list>
       <sky-link-list
-        [links]="recentLinks"
+        [links]="getRecentLinksSorted()"
         [title]="'sky_action_hub_recent_links' | skyLibResources"
       ></sky-link-list>
     </sky-column>
