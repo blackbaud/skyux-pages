@@ -30,8 +30,8 @@ export class SkyActionHubComponent {
       this.loading = false;
       this.needsAttention = value.needsAttention;
       this.parentLink = value.parentLink;
-      this.recentLinks = this.getRecentLinksSorted(value.recentLinks);
-      this.relatedLinks = this.getRelatedLinksSorted(value.relatedLinks);
+      this.recentLinks = SkyActionHubComponent.getRecentLinksSorted(value.recentLinks);
+      this.relatedLinks = SkyActionHubComponent.getRelatedLinksSorted(value.relatedLinks);
       this.title = value.title;
     }
   }
@@ -48,7 +48,7 @@ export class SkyActionHubComponent {
 
   public loading: boolean = true;
 
-  private getRecentLinksSorted(recentLinks: SkyRecentLink[]): SkyRecentLink[] {
+  private static getRecentLinksSorted(recentLinks: SkyRecentLink[]): SkyRecentLink[] {
     if (!recentLinks || recentLinks.length === 0) {
       return [];
     }
@@ -71,8 +71,8 @@ export class SkyActionHubComponent {
       .slice(0, 5);
   }
 
-  private getRelatedLinksSorted(relatedLinks: SkyPageLink[]): SkyPageLink[] {
-    if (!relatedLinks || this.relatedLinks.length === 0) {
+  private static getRelatedLinksSorted(relatedLinks: SkyPageLink[]): SkyPageLink[] {
+    if (!relatedLinks || relatedLinks.length === 0) {
       return [];
     }
     return relatedLinks.slice(0).sort((a, b) => {
