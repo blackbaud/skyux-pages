@@ -15,64 +15,64 @@ export class ActionHubDemoComponent {
     title: 'Page title',
     needsAttention: [
       {
-        title: '9 updates',
-        message: 'from portal',
+        title: '9',
+        message: 'updates from portal',
         permalink: {
           url: '#'
         }
       },
       {
-        title: '8 new messages',
-        message: 'from online donation',
+        title: '8',
+        message: 'new messages from online donation',
         permalink: {
           url: '#'
         }
       },
       {
-        title: '7 possible duplicates',
-        message: 'from constituent lists',
+        title: '7',
+        message: 'possible duplicates from constituent lists',
         permalink: {
           url: '#'
         }
       },
       {
-        title: '6 updates',
-        message: 'from portal',
+        title: '6',
+        message: 'updates from portal',
         permalink: {
           url: '#'
         }
       },
       {
-        title: '5 new messages',
-        message: 'from online donation',
+        title: '5',
+        message: 'new messages from online donation',
         permalink: {
           url: '#'
         }
       },
       {
-        title: '4 possible duplicates',
-        message: 'from constituent lists',
+        title: '4',
+        message: 'possible duplicates from constituent lists',
         permalink: {
           url: '#'
         }
       },
       {
-        title: '3 update',
-        message: 'from portal',
+        title: '3',
+        message: 'update from portal',
         permalink: {
           url: '#'
         }
       },
       {
-        title: '2 new messages',
-        message: 'from online donation',
+        title: '2',
+        message: 'new messages from online donation',
         permalink: {
           url: '#'
         }
       },
       {
-        title: '1 possible duplicate',
-        message: 'from constituent lists',
+        title: '1',
+        message: 'possible duplicate from constituent lists',
         permalink: {
           url: '#'
         }

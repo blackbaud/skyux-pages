@@ -46,7 +46,7 @@ export class SkyActionHubComponent {
 
   public title = '';
 
-  public loading: boolean = false;
+  public loading: boolean = true;
 
   public getRecentLinksSorted(): SkyRecentLink[] {
     if (!this.recentLinks || this.recentLinks.length === 0) {
