@@ -30,8 +30,8 @@ export class SkyActionHubComponent {
       this.loading = false;
       this.needsAttention = value.needsAttention;
       this.parentLink = value.parentLink;
-      this.recentLinks = value.recentLinks;
-      this.relatedLinks = value.relatedLinks;
+      this.recentLinks = this.getRecentLinksSorted(value.recentLinks);
+      this.relatedLinks = this.getRelatedLinksSorted(value.relatedLinks);
       this.title = value.title;
     }
   }
@@ -48,11 +48,11 @@ export class SkyActionHubComponent {
 
   public loading: boolean = true;
 
-  public getRecentLinksSorted(): SkyRecentLink[] {
-    if (!this.recentLinks || this.recentLinks.length === 0) {
+  private getRecentLinksSorted(recentLinks: SkyRecentLink[]): SkyRecentLink[] {
+    if (!recentLinks || recentLinks.length === 0) {
       return [];
     }
-    return this.recentLinks
+    return recentLinks
       .slice(0)
       .sort((a, b) => {
         const aTime =
@@ -71,11 +71,11 @@ export class SkyActionHubComponent {
       .slice(0, 5);
   }
 
-  public getRelatedLinksSorted(): SkyPageLink[] {
-    if (!this.relatedLinks || this.relatedLinks.length === 0) {
+  private getRelatedLinksSorted(relatedLinks: SkyPageLink[]): SkyPageLink[] {
+    if (!relatedLinks || this.relatedLinks.length === 0) {
       return [];
     }
-    return this.relatedLinks.slice(0).sort((a, b) => {
+    return relatedLinks.slice(0).sort((a, b) => {
       const aLabel = a.label.trim().toUpperCase();
       const bLabel = b.label.trim().toUpperCase();
       if (aLabel === bLabel) {

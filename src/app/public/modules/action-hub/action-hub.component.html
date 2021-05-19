@@ -40,11 +40,11 @@
     </sky-column>
     <sky-column screenLarge="3" screenXSmall="12">
       <sky-link-list
-        [links]="getRelatedLinksSorted()"
+        [links]="relatedLinks"
         [title]="'sky_action_hub_related_links' | skyLibResources"
       ></sky-link-list>
       <sky-link-list
-        [links]="getRecentLinksSorted()"
+        [links]="recentLinks"
         [title]="'sky_action_hub_recent_links' | skyLibResources"
       ></sky-link-list>
     </sky-column>
