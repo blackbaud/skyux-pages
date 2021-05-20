@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 import { SkyActionHubData } from './types/action-hub-data';
 import { SkyActionHubNeedsAttention } from './types/action-hub-needs-attention';
@@ -11,7 +11,8 @@ import { SkyRecentLink } from './types/recent-link';
  */
 @Component({
   selector: 'sky-action-hub',
-  templateUrl: './action-hub.component.html'
+  templateUrl: './action-hub.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkyActionHubComponent {
   /**
