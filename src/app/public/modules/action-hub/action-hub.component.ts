@@ -5,8 +5,6 @@ import { SkyActionHubNeedsAttention } from './types/action-hub-needs-attention';
 import { SkyPageLink } from './types/page-link';
 import { SkyRecentLink } from './types/recent-link';
 
-let data: SkyActionHubData | undefined;
-
 /**
  * Creates an action hub to direct user attention to important
  * actions and provide quick access to common tasks.
@@ -23,15 +21,16 @@ export class SkyActionHubComponent {
    * @param value
    */
   @Input()
-  public set data(value: typeof data) {
-    if (typeof value === 'undefined') {
+  public set data(value: SkyActionHubData | undefined) {
+    if (!value) {
       this.loading = true;
     } else {
       this.loading = false;
       this.needsAttention = value.needsAttention;
       this.parentLink = value.parentLink;
       this.recentLinks = SkyActionHubComponent.getRecentLinksSorted(
-        value.recentLinks
+        value.recentLinks,
+        5
       );
       this.relatedLinks = SkyActionHubComponent.getRelatedLinksSorted(
         value.relatedLinks
@@ -53,7 +52,8 @@ export class SkyActionHubComponent {
   public loading: boolean = true;
 
   private static getRecentLinksSorted(
-    recentLinks: SkyRecentLink[]
+    recentLinks: SkyRecentLink[],
+    limit: number
   ): SkyRecentLink[] {
     if (!recentLinks || recentLinks.length === 0) {
       return [];
@@ -74,7 +74,7 @@ export class SkyActionHubComponent {
         }
         return aTime > bTime ? -1 : 1;
       })
-      .slice(0, 5);
+      .slice(0, limit);
   }
 
   private static getRelatedLinksSorted(
