@@ -10,9 +10,15 @@ let parentLink: SkyPageLink;
   styleUrls: ['./page-header.component.scss']
 })
 export class SkyPageHeaderComponent {
+  /**
+   * Specifies a parent page to link in the page header.
+   */
   @Input()
   public parentLink?: typeof parentLink;
 
-  @Input()
+  /**
+   * Specifies a page header.
+   */
+   @Input()
   public pageTitle!: string;
 }
