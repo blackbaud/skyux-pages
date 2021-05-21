@@ -22,7 +22,7 @@ export class SkyActionHubComponent {
    * @param value
    */
   @Input()
-  public set data(value: SkyActionHubData | undefined) {
+  public set data(value: SkyActionHubData) {
     if (!value) {
       this.loading = true;
     } else {
