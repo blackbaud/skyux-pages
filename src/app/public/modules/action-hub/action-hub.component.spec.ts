@@ -4,6 +4,8 @@ import {
   TestBed,
   tick
 } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { expect } from '@skyux-sdk/testing';
 import { SkyKeyInfoModule } from '@skyux/indicators';
 
@@ -11,6 +13,7 @@ import { SkyActionHubComponent } from './action-hub.component';
 import { SkyActionHubModule } from './action-hub.module';
 import { ActionHubAsyncFixtureComponent } from './fixtures/action-hub-async-fixture.component';
 import { ActionHubContentFixtureComponent } from './fixtures/action-hub-content-fixture.component';
+import { ActionHubInputsFixtureComponent } from './fixtures/action-hub-inputs-fixture.component';
 
 describe('Action hub component', async () => {
   describe('Synchronous', async () => {
@@ -18,7 +21,13 @@ describe('Action hub component', async () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [SkyActionHubModule]
+        imports: [SkyActionHubModule],
+        providers: [
+          {
+            provide: Router,
+            useValue: RouterTestingModule.withRoutes([])
+          }
+        ]
       });
       fixture = TestBed.createComponent(SkyActionHubComponent);
     });
@@ -214,6 +223,80 @@ describe('Action hub component', async () => {
         'sky-link-list[ng-reflect-title="Recently Accessed"] a'
       );
       expect(recent1).toHaveText('Recent Link');
+    }));
+  });
+
+  describe('Inputs', () => {
+    let fixture: ComponentFixture<ActionHubInputsFixtureComponent>;
+
+    beforeEach(() => {
+      TestBed.configureTestingModule({
+        declarations: [ActionHubInputsFixtureComponent],
+        imports: [SkyActionHubModule],
+        providers: [
+          {
+            provide: Router,
+            useValue: RouterTestingModule.withRoutes([])
+          }
+        ]
+      });
+      fixture = TestBed.createComponent(ActionHubInputsFixtureComponent);
+    });
+
+    it('should load with separate inputs', fakeAsync(() => {
+      fixture.componentInstance.loading = true;
+      fixture.detectChanges();
+      tick(1000);
+      const skyWait = fixture.nativeElement.querySelector('.sky-wait');
+      expect(skyWait).toExist();
+      fixture.componentInstance.needsAttention = [
+        {
+          title: '1',
+          message: 'Action',
+          permalink: {
+            url: '/'
+          }
+        }
+      ];
+
+      fixture.componentInstance.relatedLinks = [
+        {
+          label: 'Related',
+          permalink: {
+            url: '/'
+          }
+        }
+      ];
+
+      fixture.componentInstance.recentLinks = [
+        {
+          label: 'Recent',
+          permalink: {
+            url: '/'
+          },
+          lastAccessed: new Date()
+        }
+      ];
+
+      fixture.componentInstance.parentLink = {
+        label: 'Parent',
+        permalink: {
+          url: '/'
+        }
+      };
+
+      fixture.componentInstance.title = 'Action Hub';
+
+      fixture.componentInstance.loading = false;
+
+      fixture.detectChanges();
+      expect(fixture.nativeElement.querySelectorAll('.sky-wait').length).toBe(
+        0
+      );
+      const recent1 = fixture.nativeElement.querySelector(
+        'sky-link-list[ng-reflect-title="Recently Accessed"] a'
+      );
+      expect(recent1).toHaveText('Recent');
     }));
   });
 
