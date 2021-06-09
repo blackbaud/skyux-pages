@@ -2,7 +2,7 @@
   <span *ngIf="parentLink" class="sky-page-header-parent-link-wrapper">
     <a
       *ngIf="parentLink.permalink?.url"
-      [href]="parentLink.permalink.url"
+      [skyHref]="parentLink.permalink.url"
       class="sky-font-heading-1 sky-page-header-parent-link"
       >{{ parentLink.label }}</a
     >
