@@ -4,7 +4,6 @@ import {
   TestBed,
   tick
 } from '@angular/core/testing';
-import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { expect } from '@skyux-sdk/testing';
 import { SkyKeyInfoModule } from '@skyux/indicators';
@@ -21,13 +20,7 @@ describe('Action hub component', async () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [SkyActionHubModule],
-        providers: [
-          {
-            provide: Router,
-            useValue: RouterTestingModule.withRoutes([])
-          }
-        ]
+        imports: [SkyActionHubModule, RouterTestingModule.withRoutes([])]
       });
       fixture = TestBed.createComponent(SkyActionHubComponent);
     });
@@ -192,7 +185,7 @@ describe('Action hub component', async () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         declarations: [ActionHubAsyncFixtureComponent],
-        imports: [SkyActionHubModule]
+        imports: [SkyActionHubModule, RouterTestingModule.withRoutes([])]
       });
       fixture = TestBed.createComponent(ActionHubAsyncFixtureComponent);
     });
@@ -224,6 +217,25 @@ describe('Action hub component', async () => {
       );
       expect(recent1).toHaveText('Recent Link');
     }));
+
+    it('should show empty needs attention language', fakeAsync(() => {
+      fixture.detectChanges();
+      tick(1000);
+      const skyWait = fixture.nativeElement.querySelector('.sky-wait');
+      expect(skyWait).toExist();
+      fixture.componentInstance.data.next({
+        title: 'Page title',
+        needsAttention: []
+      });
+      fixture.detectChanges();
+      tick(1000);
+      expect(fixture.nativeElement.querySelectorAll('.sky-wait').length).toBe(
+        0
+      );
+      expect(fixture.nativeElement.textContent).toContain(
+        'The needs attention list is currently empty'
+      );
+    }));
   });
 
   describe('Inputs', () => {
@@ -232,19 +244,15 @@ describe('Action hub component', async () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         declarations: [ActionHubInputsFixtureComponent],
-        imports: [SkyActionHubModule],
-        providers: [
-          {
-            provide: Router,
-            useValue: RouterTestingModule.withRoutes([])
-          }
-        ]
+        imports: [SkyActionHubModule, RouterTestingModule.withRoutes([])]
       });
       fixture = TestBed.createComponent(ActionHubInputsFixtureComponent);
     });
 
     it('should load with separate inputs', fakeAsync(() => {
-      fixture.componentInstance.loading = true;
+      fixture.componentInstance.needsAttention = 'loading';
+      fixture.componentInstance.relatedLinks = 'loading';
+      fixture.componentInstance.recentLinks = 'loading';
       fixture.detectChanges();
       tick(1000);
       const skyWait = fixture.nativeElement.querySelector('.sky-wait');
@@ -306,18 +314,22 @@ describe('Action hub component', async () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         declarations: [ActionHubContentFixtureComponent],
-        imports: [SkyActionHubModule, SkyKeyInfoModule]
+        imports: [
+          SkyActionHubModule,
+          SkyKeyInfoModule,
+          RouterTestingModule.withRoutes([])
+        ]
       });
       fixture = TestBed.createComponent(ActionHubContentFixtureComponent);
     });
 
     it('should show changes in embedded content', fakeAsync(() => {
       fixture.detectChanges();
-      expect(fixture.nativeElement).toHaveText('Page title hello world');
+      expect(fixture.nativeElement.textContent).toContain('hello world');
       fixture.componentInstance.label = 'bar';
       fixture.componentInstance.value = 'foo';
       fixture.detectChanges();
-      expect(fixture.nativeElement).toHaveText('Page title foo bar');
+      expect(fixture.nativeElement.textContent).toContain('foo bar');
     }));
   });
 });

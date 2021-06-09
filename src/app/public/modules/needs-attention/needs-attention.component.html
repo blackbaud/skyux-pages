@@ -10,6 +10,9 @@
   </h2>
   <sky-fluid-grid [gutterSize]="gutterSize" [disableMargin]="true">
     <sky-row>
+      <sky-column *ngIf="items?.length === 0" [screenXSmall]="12">
+        {{ 'sky_action_hub_needs_attention_empty' | skyLibResources }}
+      </sky-column>
       <sky-column
         *ngFor="let item of items; let isLast = last"
         [screenSmall]="items.length > 6 ? 6 : 12"

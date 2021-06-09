@@ -11,8 +11,8 @@ import { SkyRecentLink } from '../types/recent-link';
 export class ActionHubInputsFixtureComponent {
   public title: string;
   public parentLink: SkyLink;
-  public recentLinks: SkyRecentLink[];
-  public relatedLinks: SkyLink[];
-  public needsAttention: SkyActionHubNeedsAttention[];
+  public recentLinks: SkyRecentLink[] | 'loading';
+  public relatedLinks: SkyLink[] | 'loading';
+  public needsAttention: SkyActionHubNeedsAttention[] | 'loading';
   public loading: boolean;
 }

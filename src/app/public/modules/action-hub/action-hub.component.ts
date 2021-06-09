@@ -24,11 +24,15 @@ export class SkyActionHubComponent {
   @Input()
   public set data(value: SkyActionHubData) {
     if (!value) {
-      this.loading = true;
+      if (this.needsAttention.length === 0) {
+        this.needsAttention = 'loading';
+      }
     } else {
       this.loading = false;
       if ('needsAttention' in value) {
         this.needsAttention = value.needsAttention;
+      } else if (this.needsAttention === 'loading') {
+        this.needsAttention = [];
       }
       /* istanbul ignore next */
       if ('parentLink' in value) {
@@ -53,16 +57,16 @@ export class SkyActionHubComponent {
   }
 
   @Input()
-  public needsAttention: SkyActionHubNeedsAttention[];
+  public needsAttention: SkyActionHubNeedsAttention[] | 'loading' = [];
 
   @Input()
   public parentLink: SkyPageLink;
 
   @Input()
-  public recentLinks: SkyRecentLink[];
+  public recentLinks: SkyRecentLink[] | 'loading' = [];
 
   @Input()
-  public relatedLinks: SkyPageLink[];
+  public relatedLinks: SkyPageLink[] | 'loading' = [];
 
   @Input()
   public title = '';
