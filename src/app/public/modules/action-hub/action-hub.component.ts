@@ -28,7 +28,6 @@ export class SkyActionHubComponent {
         this.needsAttention = 'loading';
       }
     } else {
-      this.loading = false;
       if ('needsAttention' in value) {
         this.needsAttention = value.needsAttention;
       } else if (this.needsAttention === 'loading') {
@@ -70,9 +69,6 @@ export class SkyActionHubComponent {
 
   @Input()
   public title = '';
-
-  @Input()
-  public loading: boolean = false;
 
   private static getRecentLinksSorted(
     recentLinks: SkyRecentLink[],
