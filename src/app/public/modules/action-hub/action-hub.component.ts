@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-import { SkyActionHubData } from './types/action-hub-data';
 import { SkyActionHubNeedsAttention } from './types/action-hub-needs-attention';
 import { SkyPageLink } from './types/page-link';
 import { SkyRecentLink } from './types/recent-link';
@@ -15,46 +14,6 @@ import { SkyRecentLink } from './types/recent-link';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkyActionHubComponent {
-  /**
-   * Passes a SkyActionHubData object to build the action hub. The page loads until
-   * `[data]` has a value.
-   *
-   * @param value
-   */
-  @Input()
-  public set data(value: SkyActionHubData) {
-    if (!value) {
-      if (this.needsAttention.length === 0) {
-        this.needsAttention = 'loading';
-      }
-    } else {
-      if ('needsAttention' in value) {
-        this.needsAttention = value.needsAttention;
-      } else if (this.needsAttention === 'loading') {
-        this.needsAttention = [];
-      }
-      /* istanbul ignore next */
-      if ('parentLink' in value) {
-        this.parentLink = value.parentLink;
-      }
-      if ('recentLinks' in value) {
-        this.recentLinks = SkyActionHubComponent.getRecentLinksSorted(
-          value.recentLinks,
-          5
-        );
-      }
-      if ('relatedLinks' in value) {
-        this.relatedLinks = SkyActionHubComponent.getRelatedLinksSorted(
-          value.relatedLinks
-        );
-      }
-      /* istanbul ignore else */
-      if ('title' in value) {
-        this.title = value.title;
-      }
-    }
-  }
-
   @Input()
   public needsAttention: SkyActionHubNeedsAttention[] | 'loading' = [];
 
@@ -70,10 +29,13 @@ export class SkyActionHubComponent {
   @Input()
   public title = '';
 
-  private static getRecentLinksSorted(
-    recentLinks: SkyRecentLink[],
+  public getRecentLinksSorted(
+    recentLinks: SkyRecentLink[] | 'loading',
     limit: number
-  ): SkyRecentLink[] {
+  ): SkyRecentLink[] | 'loading' {
+    if (recentLinks === 'loading') {
+      return 'loading';
+    }
     if (!recentLinks || recentLinks.length === 0) {
       return [];
     }
@@ -96,9 +58,12 @@ export class SkyActionHubComponent {
       .slice(0, limit);
   }
 
-  private static getRelatedLinksSorted(
-    relatedLinks: SkyPageLink[]
-  ): SkyPageLink[] {
+  public getRelatedLinksSorted(
+    relatedLinks: SkyPageLink[] | 'loading'
+  ): SkyPageLink[] | 'loading' {
+    if (relatedLinks === 'loading') {
+      return 'loading';
+    }
     if (!relatedLinks || relatedLinks.length === 0) {
       return [];
     }
