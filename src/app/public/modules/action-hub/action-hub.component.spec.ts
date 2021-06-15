@@ -168,7 +168,7 @@ describe('Action hub component', async () => {
         0
       );
       expect(fixture.nativeElement.textContent).toContain(
-        'The needs attention list is currently empty'
+        'No issues currently need attention'
       );
     }));
   });

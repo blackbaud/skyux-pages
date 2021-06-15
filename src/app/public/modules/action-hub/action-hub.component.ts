@@ -14,18 +14,33 @@ import { SkyRecentLink } from './types/recent-link';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkyActionHubComponent {
+  /**
+   * Provides a list of items that need attention, or "loading" to show a waiting indicator.
+   */
   @Input()
   public needsAttention: SkyActionHubNeedsAttention[] | 'loading' = [];
 
+  /**
+   * Links back to a parent page if needed.
+   */
   @Input()
   public parentLink: SkyPageLink;
 
+  /**
+   * Provides a list of recently access links, or "loading" to show a waiting indicator.
+   */
   @Input()
   public recentLinks: SkyRecentLink[] | 'loading' = [];
 
+  /**
+   * Provides a list of related links, or "loading" to show a waiting indicator.
+   */
   @Input()
   public relatedLinks: SkyPageLink[] | 'loading' = [];
 
+  /**
+   * Sets the H1 title for the page.
+   */
   @Input()
   public title = '';
 
