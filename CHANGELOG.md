@@ -1,6 +1,6 @@
 # 4.0.0-beta.3 (2021-06-15)
 
-- Replaced the `data` input with separate inputs. Added support for `skyHref`. Added support for navigation extras on needs attention router links. Show a message when there are no needs attention items. [#14](https://github.com/blackbaud/skyux-pages/pull/14)
+- Replaced the `data` input with separate inputs. Added support for `skyHref`. Added support for navigation extras on needs attention router links. Added a message that displays when there are no needs attention items. [#14](https://github.com/blackbaud/skyux-pages/pull/14)
 
 # 4.0.0-beta.2 (2021-05-21)
 
