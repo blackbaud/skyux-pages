@@ -13,6 +13,6 @@
   },
   "sky_action_hub_needs_attention_empty": {
     "_description": "Display when the needs attention list is empty",
-    "message": "The needs attention list is currently empty"
+    "message": "No issues currently need attention"
   }
 }
