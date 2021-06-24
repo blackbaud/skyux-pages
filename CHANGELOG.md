@@ -1,3 +1,11 @@
+# 5.0.0-beta.1 (2021-06-24)
+
+- Added support for `@angular@^12`. []()
+
+# 5.0.0-beta.0 (2021-06-24)
+
+- Initial `5.0.0-beta` release.
+
 # 4.0.0-beta.3 (2021-06-15)
 
 - Replaced the `data` input with separate inputs. Added support for `skyHref`. Added support for navigation extras on needs attention router links. Added a message that displays when there are no needs attention items. [#14](https://github.com/blackbaud/skyux-pages/pull/14)
