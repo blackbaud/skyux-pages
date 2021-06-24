@@ -1,6 +1,6 @@
 # 5.0.0-beta.1 (2021-06-24)
 
-- Added support for `@angular@^12`. []()
+- Added support for `@angular@^12`. [#16](https://github.com/blackbaud/skyux-pages/pull/16)
 
 # 5.0.0-beta.0 (2021-06-24)
 
