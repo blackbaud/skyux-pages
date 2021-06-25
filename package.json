@@ -1,6 +1,6 @@
 {
   "name": "@skyux/pages",
-  "version": "5.0.0-beta.0",
+  "version": "5.0.0-beta.1",
   "description": "SKY UX Pages",
   "scripts": {
     "build": "skyux build-public-library --fullTemplateTypeCheck",
@@ -20,7 +20,15 @@
     "url": "https://github.com/blackbaud/skyux-pages/issues"
   },
   "homepage": "https://github.com/blackbaud/skyux-pages#readme",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@angular/common": "^9 || ^12",
+    "@angular/core": "^9 || ^12",
+    "@skyux/i18n": "^4 || ^5.0.0.beta.0",
+    "@skyux/indicators": "^4 || ^5.0.0.beta.0",
+    "@skyux/layout": "^4 || ^5.0.0.beta.0",
+    "@skyux/router": "^4 || ^5.0.0.beta.0",
+    "@skyux/theme": "^4 || ^5.0.0.beta.0"
+  },
   "dependencies": {},
   "devDependencies": {
     "@angular/animations": "9.1.13",
