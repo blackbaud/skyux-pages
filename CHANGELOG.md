@@ -1,6 +1,6 @@
 # 5.0.0-beta.3 (2021-07-27)
 
-- Fixed the peer dependency ranges for the `@skyux/*` packages. []()
+- Fixed the peer dependency ranges for the `@skyux/*` packages. [#18](https://github.com/blackbaud/skyux-pages/pull/18)
 
 # 5.0.0-beta.2 (2021-07-14)
 
