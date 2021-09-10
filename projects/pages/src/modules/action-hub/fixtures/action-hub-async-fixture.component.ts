@@ -7,7 +7,7 @@ import { SkyActionHubNeedsAttention } from '../types/action-hub-needs-attention'
 import { SkyRecentLink } from '../types/recent-link';
 
 @Component({
-  selector: 'app-action-hub-async-fixture',
+  selector: 'sky-action-hub-async-fixture',
   templateUrl: 'action-hub-async-fixture.component.html'
 })
 export class ActionHubAsyncFixtureComponent {

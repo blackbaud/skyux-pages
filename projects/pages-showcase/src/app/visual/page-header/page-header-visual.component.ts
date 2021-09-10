@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'sky-page-header-visual',
+  selector: 'app-page-header-visual',
   templateUrl: './page-header-visual.component.html'
 })
 export class PageHeaderVisualComponent {
