@@ -29,7 +29,7 @@ describe('Action Hub', () => {
       await SkyHostBrowser.scrollTo('sky-needs-attention');
 
       expect('sky-needs-attention').toMatchBaselineScreenshot(done, {
-        screenshotName: getScreenshotName('needs-attention')
+        screenshotName: getScreenshotName('needs-attention'),
       });
     });
 
@@ -38,7 +38,7 @@ describe('Action Hub', () => {
       await SkyHostBrowser.scrollTo('sky-needs-attention');
 
       expect('sky-needs-attention').toMatchBaselineScreenshot(done, {
-        screenshotName: getScreenshotName('needs-attention-xs')
+        screenshotName: getScreenshotName('needs-attention-xs'),
       });
     });
 
@@ -47,7 +47,7 @@ describe('Action Hub', () => {
       await SkyHostBrowser.scrollTo('.sky-column-lg-3');
 
       expect('.sky-column-lg-3').toMatchBaselineScreenshot(done, {
-        screenshotName: getScreenshotName('links-column')
+        screenshotName: getScreenshotName('links-column'),
       });
     });
 
@@ -56,7 +56,7 @@ describe('Action Hub', () => {
       await SkyHostBrowser.scrollTo('.sky-column-lg-3');
 
       expect('.sky-column-lg-3').toMatchBaselineScreenshot(done, {
-        screenshotName: getScreenshotName('links-column-xs')
+        screenshotName: getScreenshotName('links-column-xs'),
       });
     });
   }

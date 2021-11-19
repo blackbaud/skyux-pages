@@ -29,7 +29,7 @@ describe('Page Header', () => {
       await SkyHostBrowser.scrollTo('#sky-page-header-no-link');
 
       expect('#sky-page-header-no-link').toMatchBaselineScreenshot(done, {
-        screenshotName: getScreenshotName('page-header-no-link')
+        screenshotName: getScreenshotName('page-header-no-link'),
       });
     });
 
@@ -38,7 +38,7 @@ describe('Page Header', () => {
       await SkyHostBrowser.scrollTo('#sky-page-header-no-link');
 
       expect('#sky-page-header-no-link').toMatchBaselineScreenshot(done, {
-        screenshotName: getScreenshotName('page-header-no-link-xs')
+        screenshotName: getScreenshotName('page-header-no-link-xs'),
       });
     });
 
@@ -47,7 +47,7 @@ describe('Page Header', () => {
       await SkyHostBrowser.scrollTo('#sky-page-header-short');
 
       expect('#sky-page-header-short').toMatchBaselineScreenshot(done, {
-        screenshotName: getScreenshotName('page-header-short')
+        screenshotName: getScreenshotName('page-header-short'),
       });
     });
 
@@ -56,7 +56,7 @@ describe('Page Header', () => {
       await SkyHostBrowser.scrollTo('#sky-page-header-short');
 
       expect('#sky-page-header-short').toMatchBaselineScreenshot(done, {
-        screenshotName: getScreenshotName('page-header-short-xs')
+        screenshotName: getScreenshotName('page-header-short-xs'),
       });
     });
 
@@ -65,7 +65,7 @@ describe('Page Header', () => {
       await SkyHostBrowser.scrollTo('#sky-page-header-long');
 
       expect('#sky-page-header-long').toMatchBaselineScreenshot(done, {
-        screenshotName: getScreenshotName('page-header-long')
+        screenshotName: getScreenshotName('page-header-long'),
       });
     });
 
@@ -74,7 +74,7 @@ describe('Page Header', () => {
       await SkyHostBrowser.scrollTo('#sky-page-header-long');
 
       expect('#sky-page-header-long').toMatchBaselineScreenshot(done, {
-        screenshotName: getScreenshotName('page-header-long-xs')
+        screenshotName: getScreenshotName('page-header-long-xs'),
       });
     });
   }

@@ -1,7 +1,5 @@
 {
-  "editor.rulers": [
-    100
-  ],
+  "editor.rulers": [100],
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 100,
   "typescript.tsdk": "node_modules/typescript/lib",
