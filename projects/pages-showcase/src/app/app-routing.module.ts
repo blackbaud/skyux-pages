@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ActionHubVisualComponent} from './visual/action-hub/action-hub-visual.component';
-import {PageHeaderVisualComponent} from './visual/page-header/page-header-visual.component';
-import {SkyThemeService} from '@skyux/theme';
+import { ActionHubVisualComponent } from './visual/action-hub/action-hub-visual.component';
+import { PageHeaderVisualComponent } from './visual/page-header/page-header-visual.component';
+import { SkyThemeService } from '@skyux/theme';
 
 const routes: Routes = [
   {
     path: 'visual/action-hub',
-    component: ActionHubVisualComponent
+    component: ActionHubVisualComponent,
   },
   {
     path: 'visual/page-header',
-    component: PageHeaderVisualComponent
-  }
+    component: PageHeaderVisualComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [SkyThemeService]
+  providers: [SkyThemeService],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
