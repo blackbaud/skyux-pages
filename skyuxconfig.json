@@ -28,7 +28,7 @@
     "styles": ["@skyux/docs-tools/css/docs-tools.css"],
     "theming": {
       "supportedThemes": ["default", "modern"],
-      "theme": "modern"
+      "theme": "default"
     }
   },
   "host": {
@@ -38,9 +38,5 @@
     }
   },
   "omnibar": {},
-  "params": {
-    "svcid": {
-      "value": "skyux-modern"
-    }
-  }
+  "params": {}
 }
