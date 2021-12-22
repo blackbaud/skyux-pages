@@ -38,5 +38,9 @@
     }
   },
   "omnibar": {},
-  "params": {}
+  "params": {
+    "svcid": {
+      "value": "skyux"
+    }
+  }
 }
