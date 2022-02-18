@@ -15,7 +15,7 @@ import { SkyRecentLink } from './types/recent-link';
 })
 export class SkyActionHubComponent {
   /**
-   * Provides a list of actions that users must perform based on business requirements or best practices, or `loading` to display a wait indicator.
+   * Provides a list of actions that users must perform based on business requirements or best practices, or `"loading"` to display a wait indicator.
    */
   @Input()
   public needsAttention: SkyActionHubNeedsAttention[] | 'loading' = [];
@@ -27,13 +27,13 @@ export class SkyActionHubComponent {
   public parentLink: SkyPageLink;
 
   /**
-   * Provides a list of recently accessed links, or `loading` to display a wait indicator.
+   * Provides a list of recently accessed links, or `"loading"` to display a wait indicator.
    */
   @Input()
   public recentLinks: SkyRecentLink[] | 'loading' = [];
 
   /**
-   * Provides a list of related links, or `loading` to display a wait indicator.
+   * Provides a list of related links, or `"loading"` to display a wait indicator.
    */
   @Input()
   public relatedLinks: SkyPageLink[] | 'loading' = [];
